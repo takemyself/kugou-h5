@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .test {
+            width: 200px;
+            height: 100px;
+            background: yellow;
+            position: relative;
+            overflow: hidden;
+        }
+        .mask{
+            width: 100%;
+            height: 100%;
+            background: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .out{
+            width: 500px;
+            height: 500px;
+            background: yellow;
+            position: relative;
+        }
+        .car{
+            width: 30px;
+            height:60px;
+            background: red;
+            position: absolute;
+            top: 100px;
+        }
+        .nums{
+            opacity: 0;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=您申请的key值"></script>
+    <script src="./js/echarts.js"></script>
+</head>
+<body>
+<script>
+  var allAni = {
+    init: function () {
+//      this.peopleRun('.son');
+    },
+
+    //透明度出现
+    noneToOut: function (noneToOut, times) {
+      $(noneToOut).animate({'opacity': '1'}, times);
+    },
+
+    //文字+敲击
+    rightin:function (rightin) {
+      var olength=0;
+      $('.keyboard').get(0).play();
+      var timer1=setInterval(function () {
+        olength+=10;
+        if (olength>=100){
+          $('.keyboard').get(0).pause();
+          clearInterval(timer1);
+        }
+        $(rightin).css({'left':olength+'%'});
+      },500)
+    },
+
+    //人走路
+    peopleRun:function (peo) {
+      var num=0;
+      var timer2=setInterval(function () {
+        num+=1;
+        if (num>7){
+          num=1;
+        }
+        $(peo).attr('src','./img/people/'+num+'.png')
+      },500)
+    },
+
+    //车移动
+    carRun:function (car,sta) {
+      var num=0;
+      var timer3=setInterval(function () {
+        num+=1;
+        var tnum=1.5*num+100;
+        if (num>100){
+          clearInterval(timer3);
+        }
+        if (!sta){
+          $(car).css({'left':num+'px','top':tnum+'px'})
+        }else {
+          $(car).css({'right':num+'px','top':tnum+'px'})
+        }
+      },1000/60)
+    },
+
+    //2015 做背景图片定位，挨个显示
+    numRun:function (numRun) {
+      var num=0;
+      for (var i=0;i<$(numRun).length;i++){
+        (function (i) {
+          setTimeout(function () {
+            $(numRun).eq(i).animate({'opacity':1},1000);
+          },i*500)
+        })(i)
+      }
+    },
+  };
+  allAni.init();
+</script>
+<!--<div id="container" style="width:500px; height:300px"></div>-->
+<!--
+<script type="text/javascript">
+  var map = new AMap.Map('container', {
+    resizeEnable: true,
+    zoom:11,
+    mapStyle: 'darkblue'
+    center: [116.397428, 39.90923]
+  });
+</script>
+-->
+<!--<img src="./img/first/car.png" alt="">-->
+<!--<div class="out">-->
+    <!--<div class="car">-->
+        <!--<img src="./img/first/car.png" width="100" height="100" alt="">-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="nums">1</div>-->
+<!--<div class="nums">2</div>-->
+<!--<div class="nums">3</div>-->
+<!--<div class="nums">4</div>-->
+<!--<audio class="keyboard">-->
+    <!--<source src="./mp3/keyboard.mp3">-->
+    <!--您的浏览器不支持音频-->
+<!--</audio>-->
+
+<!--人走路-->
+<!--<div class="peo">-->
+    <!--<img class="son" src="./img/people/1.png" alt="">-->
+<!--</div>-->
+
+<!--<div class="test">-->
+    <!--<img src="./img/11.png" width="100%" height="100%" alt="">-->
+    <!--<div class="mask">-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+
+</html>
