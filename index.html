@@ -5,49 +5,135 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .test {
-            width: 200px;
-            height: 100px;
-            background: yellow;
-            position: relative;
-            overflow: hidden;
-        }
-        .mask{
-            width: 100%;
-            height: 100%;
-            background: white;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .out{
-            width: 500px;
-            height: 500px;
-            background: yellow;
-            position: relative;
-        }
-        .car{
-            width: 30px;
-            height:60px;
-            background: red;
-            position: absolute;
-            top: 100px;
-        }
-        .nums{
-            opacity: 0;
-        }
-    </style>
+    <title>华晨3周年</title>
+    <link rel="stylesheet" href="./css/index.css">
     <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
-    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=您申请的key值"></script>
     <script src="./js/echarts.js"></script>
 </head>
 <body>
+    <div class="warp">
+        <ul class="out">
+            <li class="li_items">
+                <div class="first_left">
+                    <img src="./img/first/left.png" width="100%" alt="">
+                </div>
+                <div class="first_car">
+                    <img src="./img/first/car.png" width="100%" alt="">
+                </div>
+                <div class="first_third">
+                    <img src="./img/first/3.png" width="100%" alt="">
+                </div>
+                <div class="first_year">
+                    <img src="./img/first/year.png" width="100%" alt="">
+                </div>
+                <div class="first_bottom">
+                    <img src="./img/first/text.png" width="100%" alt="">
+                    <div class="first_zhe">.</div>
+                </div>
+                <audio class="keyboard">
+                    <source src="./mp3/keyboard.mp3">
+                </audio>
+            </li>
+            <li class="li_items">
+                <div class="second_bg">
+                    <img src="./img/second/bg.jpg" height="300" alt="">
+                    <div class="second_year">
+                        <span class="second_num" style="background-image:url('./img/second/2015.png')">.</span>
+                        <span class="second_num" style="background-image:url('./img/second/2015.png')">.</span>
+                        <span class="second_num" style="background-image:url('./img/second/2015.png')">.</span>
+                        <span class="second_num" style="background-image:url('./img/second/2015.png')">.</span>
+                    </div>
+                    <div class="peoout">
+                        <img class="peo" src="./img/people/1.png" height="200" alt="">
+                    </div>
+                </div>
+            </li>
+            <li class="li_items">333</li>
+        </ul>
+    </div>
+</body>
 <script>
   var allAni = {
     init: function () {
-//      this.peopleRun('.son');
+      var This=this;
+      this.liToInit();
+      this.noneToOut('.first_third',3000);
+      this.noneToOut('.first_year',5000);
+      setTimeout(function () {
+        This.rightin('.first_zhe');
+      },3000);
+      this.carRun('.first_car');
+      setTimeout(function () {
+        This.second();
+      },10000);
+    },
+    second:function () {
+      var This=this;
+      this.tomove('.out','-100%',4000);
+      setTimeout(function () {
+        This.numRun('.second_num');
+      },3000);
+      this.peopleRun('.peo');
+    },
+    //初始化
+    liToInit:function () {
+      for (var i=0;i<$('.li_items').length;i++){
+        $('.li_items').eq(i).css({'left':100*i+'%'});
+      }
+    },
+
+    //屏幕移动
+    tomove:function (cla,sta,times,direction) {
+      if(direction){
+        $(cla).animate({'right':sta},times)
+      }else {
+        $(cla).animate({'left':sta},times)
+      }
+    },
+
+    //display none to block
+    toblock:function (cla) {
+        $(cla).css({'display':'block'});
+    },
+
+    //缩放效果
+    big:function (jitter) {
+      var num=1;
+      var adds=0.1;
+      var lv=0;
+      var timer=setInterval(function () {
+        num+=adds;
+        if (num>2||num<1){
+          lv++;
+          if (lv>3){
+            clearInterval(timer);
+            return;
+          }
+          adds=-adds;
+        }
+        console.log(num);
+        $(jitter).css({'transform':'scale('+num+')'});
+      },1000/60)
+    },
+
+    //文字抖动
+    jitter:function (jitter) {
+      var num=0;
+      var adds=2;
+      var lv=0;
+      var timer=setInterval(function () {
+        num+=adds;
+        if (num>10||num<-10){
+          lv++;
+          if (lv>2){
+            clearInterval(timer);
+            $(jitter).css({'transform':'rotate('+0+'deg)'});
+            return;
+          }
+          adds=-adds;
+        }
+        $(jitter).css({'transform':'rotate('+num+'deg)'});
+      },1000/60)
     },
 
     //透明度出现
@@ -74,28 +160,34 @@
       var num=0;
       var timer2=setInterval(function () {
         num+=1;
-        if (num>7){
+        if (num>16){
           num=1;
         }
         $(peo).attr('src','./img/people/'+num+'.png')
-      },500)
+      },100)
     },
 
     //车移动
     carRun:function (car,sta) {
+      var owidth=$(window).width();
       var num=0;
       var timer3=setInterval(function () {
         num+=1;
-        var tnum=1.5*num+100;
-        if (num>100){
+        //竖屏情况下
+        if (owidth<450&&num>=100){
+          num=100;
+        }
+        var tnum=1.5*num;
+        if (num>200){
           clearInterval(timer3);
         }
         if (!sta){
-          $(car).css({'left':num+'px','top':tnum+'px'})
+          $(car).css({'transform':'scale('+num/100+')'});
+          $(car).css({'left':num+'px','top':tnum+'px'});
         }else {
-          $(car).css({'right':num+'px','top':tnum+'px'})
+          $(car).css({'right':num+'px','top':tnum+'px'});
         }
-      },1000/60)
+      },1000/60);
     },
 
     //2015 做背景图片定位，挨个显示
@@ -104,50 +196,12 @@
       for (var i=0;i<$(numRun).length;i++){
         (function (i) {
           setTimeout(function () {
-            $(numRun).eq(i).animate({'opacity':1},1000);
-          },i*500)
+            $(numRun).eq(i).animate({'opacity':1},2000);
+          },i*1000)
         })(i)
       }
     },
   };
   allAni.init();
 </script>
-<!--<div id="container" style="width:500px; height:300px"></div>-->
-<!--
-<script type="text/javascript">
-  var map = new AMap.Map('container', {
-    resizeEnable: true,
-    zoom:11,
-    mapStyle: 'darkblue'
-    center: [116.397428, 39.90923]
-  });
-</script>
--->
-<!--<img src="./img/first/car.png" alt="">-->
-<!--<div class="out">-->
-    <!--<div class="car">-->
-        <!--<img src="./img/first/car.png" width="100" height="100" alt="">-->
-    <!--</div>-->
-<!--</div>-->
-<!--<div class="nums">1</div>-->
-<!--<div class="nums">2</div>-->
-<!--<div class="nums">3</div>-->
-<!--<div class="nums">4</div>-->
-<!--<audio class="keyboard">-->
-    <!--<source src="./mp3/keyboard.mp3">-->
-    <!--您的浏览器不支持音频-->
-<!--</audio>-->
-
-<!--人走路-->
-<!--<div class="peo">-->
-    <!--<img class="son" src="./img/people/1.png" alt="">-->
-<!--</div>-->
-
-<!--<div class="test">-->
-    <!--<img src="./img/11.png" width="100%" height="100%" alt="">-->
-    <!--<div class="mask">-->
-    <!--</div>-->
-<!--</div>-->
-</body>
-
 </html>

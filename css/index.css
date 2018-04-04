@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+body{
+    /*background: black;*/
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.warp{
+    position: relative;
+}
+.out{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.li_items{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: white;
+    float: left;
+}
+.first_left{
+    width: 70%;
+}
+.first_third{
+    opacity: 0;
+    position: absolute;
+    top: 5%;
+    right: 15%;
+}
+.first_year{
+    opacity: 0;
+    position: absolute;
+    top: 45%;
+    right: 7%;
+}
+.first_bottom{
+    width: 300px;
+    position: absolute;
+    overflow: hidden;
+    bottom: 20%;
+    right: 5%;
+}
+.first_zhe{
+    width: 100%;
+    height: 50px;
+    color: white;
+    background: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.first_car{
+    width: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(0);
+}
+.second_bg{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.second_year{
+    width: 300px;
+    height: 80px;
+    overflow: hidden;
+    position: absolute;
+    top: 200px;
+    left: 40px;
+}
+.second_year>span{
+    display: inline-block;
+    width: 50px;
+    height: 65px;
+    color: white;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+.second_year>span:nth-of-type(2){
+    background-position:-70px 0;
+}
+.second_year>span:nth-of-type(3){
+    background-position:-120px 0;
+}
+.second_year>span:nth-of-type(4){
+    background-position:-170px 0;
+}
+.peoout{
+    position: absolute;
+    left: -100px;
+    bottom: -70px;
+}
+
+@media (max-width: 414px) {
+    .first_third{
+        width: 80px;
+    }
+    .first_year{
+        right: 2%;
+    }
+    .first_bottom{
+        width: 180px;
+        bottom: 10%;
+    }
+}
