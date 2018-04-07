@@ -29,7 +29,67 @@ body{
     float: left;
 }
 .first_left{
-    width: 70%;
+    width: 60%;
+    position: relative;
+    opacity: 0;
+}
+.runup{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.first_wen{
+    display: inline-block;
+    margin-right: -5px;
+    width: 31px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    color: white;
+    opacity: 0;
+}
+.first_wen:nth-of-type(2){
+    background-position: -30px 0;
+}
+.first_wen:nth-of-type(3){
+    background-position: -60px 0;
+}
+.first_wen:nth-of-type(4){
+    background-position: -90px 0;
+}
+.first_wen:nth-of-type(5){
+    background-position: -122px 0;
+}
+.first_wen:nth-of-type(6){
+    background-position: -150px 0;
+}
+.first_wen:nth-of-type(7){
+    background-position: -182px 0;
+}
+.first_wen:nth-of-type(9){
+    background-position: -229px 0;
+}
+.first_wen:nth-of-type(10){
+    background-position: -259px 0;
+}
+.first_wen:nth-of-type(11){
+    background-position: -289px 0;
+}
+.first_wen:nth-of-type(12){
+    background-position: -319px 0;
+}
+.first_wen:nth-of-type(13){
+    background-position: -349px 0;
+}
+.first_wen:nth-of-type(14){
+    background-position: -379px 0;
+}
+.rundown{
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 .first_third{
     opacity: 0;
@@ -44,11 +104,11 @@ body{
     right: 7%;
 }
 .first_bottom{
-    width: 300px;
+    width: 430px;
     position: absolute;
     overflow: hidden;
     bottom: 20%;
-    right: 5%;
+    right: 1%;
 }
 .first_zhe{
     width: 100%;
@@ -68,9 +128,24 @@ body{
 }
 .second_bg{
     width: 100%;
+    height: 300px;
+    border-bottom: 5px solid #666;
     position: absolute;
     left: 0;
     top: 0;
+}
+.second_lou{
+    position: absolute;
+    width: 2000px;
+    height: 139px;
+    overflow: hidden;
+    top: 161px;
+    left: 0;
+}
+.second_items{
+    float: left;
+    margin-top: 161px;
+    overflow: hidden;
 }
 .second_year{
     width: 300px;
@@ -98,11 +173,46 @@ body{
     background-position:-170px 0;
 }
 .peoout{
-    position: absolute;
+    position: fixed;
     left: -100px;
-    bottom: -70px;
+    top: 180px;
 }
 
+.third_bg{
+    position: absolute;
+    top: 0;
+    left:0;
+}
+.third_mid{
+    width: 200px;
+    height: 25px;
+    position: absolute;
+    opacity: 0;
+    top: 80px;
+    left: 35%;
+}
+.third_wenzi{
+    width: 300px;
+    height: 174px;
+    position: absolute;
+    left: 5px;
+    top: -100px;
+}
+.third_car{
+    width: 120px;
+    height: 100px;
+    position: absolute;
+    top: 270px;
+}
+.third_ltwocar,.third_rtwocar{
+    width: 100px;
+}
+.third_lcar,.third_ltwocar{
+    left: -120px;
+}
+.third_rcar,.third_rtwocar{
+    right: -120px;
+}
 @media (max-width: 414px) {
     .first_third{
         width: 80px;

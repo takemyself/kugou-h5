@@ -15,7 +15,13 @@
         <ul class="out">
             <li class="li_items">
                 <div class="first_left">
-                    <img src="./img/first/left.png" width="100%" alt="">
+                    <img src="./img/first/circle.png" width="100%" alt="">
+                    <div class="runup">
+                        <img src="./img/first/runup.png" width="100%" alt="">
+                    </div>
+                    <div class="rundown">
+                        <img src="./img/first/rundown.png" width="100%" alt="">
+                    </div>
                 </div>
                 <div class="first_car">
                     <img src="./img/first/car.png" width="100%" alt="">
@@ -27,29 +33,68 @@
                     <img src="./img/first/year.png" width="100%" alt="">
                 </div>
                 <div class="first_bottom">
-                    <img src="./img/first/text.png" width="100%" alt="">
-                    <div class="first_zhe">.</div>
+                    <!--<img src="./img/first/text.png" width="100%" alt="">-->
+                    <!--<div class="first_zhe">.</div>-->
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
+                    <span class="first_wen">.</span>
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
+                    <span class="first_wen" style="background-image:url('./img/first/text.png')">.</span>
                 </div>
                 <audio class="keyboard">
                     <source src="./mp3/keyboard.mp3">
                 </audio>
             </li>
+
             <li class="li_items">
                 <div class="second_bg">
-                    <img src="./img/second/bg.jpg" height="300" alt="">
+                    <div class="second_lou">
+                        <div class="second_items"><img src="./img/second/lou1.png" alt=""></div>
+                        <div class="second_items"><img src="./img/second/lou2.png" alt=""></div>
+                        <div class="second_items"><img src="./img/second/lou3.png" alt=""></div>
+                        <div class="second_items"><img src="./img/second/lou4.png" alt=""></div>
+                    </div>
                     <div class="second_year">
                         <span class="second_num" style="background-image:url('./img/second/2015.png')">.</span>
                         <span class="second_num" style="background-image:url('./img/second/2015.png')">.</span>
                         <span class="second_num" style="background-image:url('./img/second/2015.png')">.</span>
                         <span class="second_num" style="background-image:url('./img/second/2015.png')">.</span>
                     </div>
-                    <div class="peoout">
-                        <img class="peo" src="./img/people/1.png" height="200" alt="">
-                    </div>
                 </div>
             </li>
-            <li class="li_items">333</li>
+
+            <li class="li_items">
+                <div class="third_bg">
+                    <img src="./img/third/bg.jpg" height="300" alt="">
+                </div>
+                <div class="third_mid"><img src="./img/third/haveme.png" width="100%" alt=""></div>
+                <div class="third_wenzi"><img src="./img/third/wenzi.png" width="100%" alt=""></div>
+                <div class="third_car third_lcar">
+                    <img src="./img/third/zhonghua.png" width="100%" alt="">
+                </div>
+                <div class="third_car third_ltwocar">
+                    <img src="./img/third/jinbei.png" width="100%" alt="">
+                </div>
+                <div class="third_car third_rcar">
+                    <img src="./img/third/youone.png" width="100%" alt="">
+                </div>
+                <div class="third_car third_rtwocar">
+                    <img src="./img/third/youtwo.png" width="100%" alt="">
+                </div>
+            </li>
         </ul>
+    </div>
+    <div class="peoout" style="opacity: 0;">
+        <img class="peo" src="./img/people/1.png" height="200" alt="">
     </div>
 </body>
 <script>
@@ -57,23 +102,64 @@
     init: function () {
       var This=this;
       this.liToInit();
+      this.noneToOut('.first_left' ,2000);
+      this.noneToOut('.runup' ,4000);
+      this.noneToOut('.rundown' ,6000);
       this.noneToOut('.first_third',3000);
       this.noneToOut('.first_year',5000);
       setTimeout(function () {
-        This.rightin('.first_zhe');
+        This.numRun('.first_wen',1000/60,300);
+        This.rightin();
       },3000);
-      this.carRun('.first_car');
+      setTimeout(function () {
+        This.carRun('.first_car');
+      },2000);
       setTimeout(function () {
         This.second();
-      },10000);
+      },9000);
     },
     second:function () {
       var This=this;
-      this.tomove('.out','-100%',4000);
+      this.tomove('.out','-100%',4000,2);
       setTimeout(function () {
-        This.numRun('.second_num');
+        This.bgRun('.second_items',500,4000);
       },3000);
+      setTimeout(function () {
+        This.numRun('.second_num',2000,1000);
+      },5000);
       this.peopleRun('.peo');
+      setTimeout(function () {
+        This.noneToOut('.peoout');
+        This.tomove('.peoout','300px',3000,2);
+      },5000);
+      setTimeout(function () {
+        This.tomove('.second_lou','-800px',8000,2);
+      },8000);
+      setTimeout(function () {
+        This.third();
+      },16000);
+//      16000
+    },
+    third:function () {
+      var This=this;
+      this.tomove('.peoout','220px',4000,3);
+      this.tomove('.out','-200%',4000,2);
+      setTimeout(function () {
+        This.tomove('.third_bg','-235px',2000,2);
+      },4000);
+      setTimeout(function () {
+        This.noneToOut('.third_mid',2000);
+        This.jitter('.third_mid');
+        This.tomove('.third_wenzi','-25px',3000,3);
+      },7000);
+      setTimeout(function () {
+        This.thirdCarRun('.third_lcar',200);
+        This.thirdCarRun('.third_rcar',200,1);
+      },8000);
+      setTimeout(function () {
+        This.thirdCarRun('.third_ltwocar',50);
+        This.thirdCarRun('.third_rtwocar',50,1);
+      },10000);
     },
     //初始化
     liToInit:function () {
@@ -82,15 +168,47 @@
       }
     },
 
+    //车移动
+    thirdCarRun:function (car,distance,sta) {
+      var num=-120;
+      var tnum=0;
+      var timer3=setInterval(function () {
+        num+=2;
+        tnum=num*0.1+280;
+        if (num>distance){
+          clearInterval(timer3);
+        }
+        var big=num/distance/2+1;
+        if (!sta){
+          $(car).css({'transform':'scale('+big+')'});
+          $(car).css({'left':num+'px','top':tnum+'px'});
+        }else {
+          $(car).css({'right':num+'px','top':tnum+'px'});
+        }
+      },1000/60);
+    },
+
     //屏幕移动
     tomove:function (cla,sta,times,direction) {
-      if(direction){
-        $(cla).animate({'right':sta},times)
-      }else {
-        $(cla).animate({'left':sta},times)
+      if(direction==1){
+        $(cla).animate({'right':sta},times);
+      }else if (direction==2){
+        $(cla).animate({'left':sta},times);
+      }else if(direction==3){
+        $(cla).animate({'top':sta},times);
       }
     },
 
+    bgRun:function (numRun,times,times2) {
+      var num=0;
+      for (var i=0;i<$(numRun).length;i++){
+        (function (i) {
+          setTimeout(function () {
+            $(numRun).eq(i).animate({'marginTop':0},times);
+          },i*times2)
+        })(i)
+      }
+    },
     //display none to block
     toblock:function (cla) {
         $(cla).css({'display':'block'});
@@ -142,17 +260,11 @@
     },
 
     //文字+敲击
-    rightin:function (rightin) {
-      var olength=0;
+    rightin:function () {
       $('.keyboard').get(0).play();
-      var timer1=setInterval(function () {
-        olength+=10;
-        if (olength>=100){
-          $('.keyboard').get(0).pause();
-          clearInterval(timer1);
-        }
-        $(rightin).css({'left':olength+'%'});
-      },500)
+      setTimeout(function () {
+        $('.keyboard').get(0).pause();
+      },4000);
     },
 
     //人走路
@@ -168,7 +280,7 @@
     },
 
     //车移动
-    carRun:function (car,sta) {
+    carRun:function (car,sta,turn) {
       var owidth=$(window).width();
       var num=0;
       var timer3=setInterval(function () {
@@ -188,16 +300,19 @@
           $(car).css({'right':num+'px','top':tnum+'px'});
         }
       },1000/60);
+      if (turn){
+        clearInterval(timer3);
+      }
     },
 
     //2015 做背景图片定位，挨个显示
-    numRun:function (numRun) {
+    numRun:function (numRun,times,times2) {
       var num=0;
       for (var i=0;i<$(numRun).length;i++){
         (function (i) {
           setTimeout(function () {
-            $(numRun).eq(i).animate({'opacity':1},2000);
-          },i*1000)
+            $(numRun).eq(i).animate({'opacity':1},times);
+          },i*times2)
         })(i)
       }
     },

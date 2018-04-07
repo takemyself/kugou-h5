@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>华晨3周年</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+    <script src="./js/echarts.js"></script>
+</head>
+<body>
+<div class="warp">
+    <ul class="out">
+        <li class="li_items">
+            <div class="third_bg">
+                <img src="./img/third/bg.jpg" height="300" alt="">
+            </div>
+            <div class="third_mid"><img src="./img/third/haveme.png" width="100%" alt=""></div>
+            <div class="third_wenzi"><img src="./img/third/wenzi.png" width="100%" alt=""></div>
+            <div class="third_car third_lcar">
+                <img src="./img/third/zhonghua.png" width="100%" alt="">
+            </div>
+            <div class="third_car third_rcar">
+                <img src="./img/third/zhonghua.png" width="100%" alt="">
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+<script>
+  var allAni = {
+    init: function () {
+      var This=this;
+      this.thirdCarRun('.third_lcar',200);
+    },
+    thirdCarRun:function (car,distance,sta) {
+      var num=-120;
+      var tnum=0;
+      var timer3=setInterval(function () {
+        num+=2;
+        tnum=num*0.1+280;
+        if (num>distance){
+          clearInterval(timer3);
+        }
+        var big=num/distance/2+1;
+        if (!sta){
+//          $(car).css({'transform':'scale('+big+')'});
+          $(car).css({'left':num+'px','top':tnum+'px'});
+        }else {
+          $(car).css({'right':num+'px','top':tnum+'px'});
+        }
+      },1000/60);
+    },
+  };
+  allAni.init();
+</script>
+</html>
