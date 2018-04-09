@@ -14,27 +14,80 @@
 <div class="warp">
     <ul class="out">
         <li class="li_items">
-            <div class="third_bg">
-                <img src="./img/third/bg.jpg" height="300" alt="">
-            </div>
-            <div class="third_mid"><img src="./img/third/haveme.png" width="100%" alt=""></div>
-            <div class="third_wenzi"><img src="./img/third/wenzi.png" width="100%" alt=""></div>
-            <div class="third_car third_lcar">
-                <img src="./img/third/zhonghua.png" width="100%" alt="">
-            </div>
-            <div class="third_car third_rcar">
-                <img src="./img/third/zhonghua.png" width="100%" alt="">
-            </div>
+            
         </li>
     </ul>
 </div>
+<!--<div class="peoout" style="left: 200px">-->
+    <!--<img class="ple peo" numb="1" src="./img/people/1.png" height="200" alt="">-->
+<!--</div>-->
 </body>
 <script>
   var allAni = {
     init: function () {
       var This=this;
-      this.thirdCarRun('.third_lcar',200);
+
     },
+    widthToShort:function (obj) {
+      $(obj).animate({'width':'0'},3000);
+    },
+
+    //门旋转
+    toRound:function (obj) {
+      var num=0;
+      var timer=0;
+      timer=setInterval(function () {
+        num+=1;
+        if (num>=130){
+          clearTimeout(timer);
+        }
+        $(obj).css({'transform':'rotateY('+num+'deg)'});
+      },1000/60)
+    },
+    //初始化
+    liToInit:function () {
+      for (var i=0;i<$('.li_items').length;i++){
+        $('.li_items').eq(i).css({'left':100*i+'%'});
+      }
+    },
+
+    //字顺序放大缩小
+    textBig:function (obj,times,times2) {
+      for (var i=0;i<$(obj).length;i++){
+        (function (i) {
+          setTimeout(function () {
+            var num=1;
+            var times=0;
+            var j=0.1;
+            var timer=setInterval(function () {
+              num+=j;
+              if (num>=2||num<=1){
+                j=-j;
+                times+=1;
+              }
+              if (times>=4){
+                clearTimeout(timer);
+              }
+              $(obj).eq(i).css({'transform':'scale('+num+')'});
+            },1000/60);
+          },i*times2)
+        })(i)
+      }
+    },
+    //人停止
+    stopPeo:function (obj) {
+      var num=0;
+      var cla=obj.substring(1);
+      var timers=setInterval(function () {
+        num=$(obj).attr('numb');
+        if (num>=16){
+          $(obj).attr('src','./img/people/17.png');
+          $(obj).removeClass(cla);
+        }
+      },100);
+    },
+
+    //车移动
     thirdCarRun:function (car,distance,sta) {
       var num=-120;
       var tnum=0;
@@ -46,12 +99,145 @@
         }
         var big=num/distance/2+1;
         if (!sta){
-//          $(car).css({'transform':'scale('+big+')'});
+          $(car).css({'transform':'scale('+big+')'});
           $(car).css({'left':num+'px','top':tnum+'px'});
         }else {
           $(car).css({'right':num+'px','top':tnum+'px'});
         }
       },1000/60);
+    },
+
+    //屏幕移动
+    tomove:function (cla,sta,times,direction) {
+      if(direction==1){
+        $(cla).animate({'right':sta},times);
+      }else if (direction==2){
+        $(cla).animate({'left':sta},times);
+      }else if(direction==3){
+        $(cla).animate({'top':sta},times);
+      }
+    },
+
+    //背景上来
+    bgRun:function (numRun,times,times2) {
+      var num=0;
+      for (var i=0;i<$(numRun).length;i++){
+        (function (i) {
+          setTimeout(function () {
+            $(numRun).eq(i).animate({'marginTop':0},times);
+          },i*times2)
+        })(i)
+      }
+    },
+
+    //display none to block
+    toblock:function (cla) {
+      $(cla).css({'display':'block'});
+    },
+
+    //缩放效果
+    big:function (jitter) {
+      var num=1;
+      var adds=0.1;
+      var lv=0;
+      var timer=setInterval(function () {
+        num+=adds;
+        if (num>2||num<1){
+          lv++;
+          if (lv>3){
+            clearInterval(timer);
+            return;
+          }
+          adds=-adds;
+        }
+        console.log(num);
+        $(jitter).css({'transform':'scale('+num+')'});
+      },1000/60)
+    },
+
+    //文字抖动
+    jitter:function (jitter) {
+      var num=0;
+      var adds=2;
+      var lv=0;
+      var timer=setInterval(function () {
+        num+=adds;
+        if (num>10||num<-10){
+          lv++;
+          if (lv>2){
+            clearInterval(timer);
+            $(jitter).css({'transform':'rotate('+0+'deg)'});
+            return;
+          }
+          adds=-adds;
+        }
+        $(jitter).css({'transform':'rotate('+num+'deg)'});
+      },1000/60)
+    },
+
+    //透明度出现
+    noneToOut: function (noneToOut, times) {
+      $(noneToOut).animate({'opacity': '1'}, times);
+    },
+
+    //文字+敲击
+    rightin:function () {
+      $('.keyboard').get(0).play();
+      setTimeout(function () {
+        $('.keyboard').get(0).pause();
+      },4000);
+    },
+
+    //人走路
+    peopleRun:function (peo) {
+      $(peo).attr('src','./img/people/1.png');
+      var num=0;
+      var timer2=setInterval(function () {
+        num+=1;
+        if (num>16){
+          num=1;
+        }
+        $(peo).attr('src','./img/people/'+num+'.png');
+        $(peo).attr('numb',num);
+      },100)
+    },
+
+    //车移动
+    carRun:function (car,sta,turn) {
+      var owidth=$(window).width();
+      var num=0;
+      var timer3=setInterval(function () {
+        num+=1;
+        //竖屏情况下
+        if (owidth<450&&num>=100){
+          num=100;
+        }
+        var tnum=1.5*num;
+        if (num>200){
+          clearInterval(timer3);
+        }
+        if (!sta){
+          $(car).css({'transform':'scale('+num/100+')'});
+          $(car).css({'left':num+'px','top':tnum+'px'});
+        }else {
+          $(car).css({'right':num+'px','top':tnum+'px'});
+        }
+      },1000/60);
+      if (turn){
+        clearInterval(timer3);
+      }
+    },
+
+    //2015 做背景图片定位，挨个显示
+    numRun:function (numRun,times,times2) {
+      var num=0;
+      for (var i=0;i<$(numRun).length;i++){
+        (function (i) {
+          setTimeout(function () {
+            $(numRun).eq(i).animate({'opacity':1},times);
+          },i*times2)
+        })(i)
+      }
     },
   };
   allAni.init();

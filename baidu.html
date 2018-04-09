@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+</head>
+<body>
+    <div id="container" style="width: 736px;height: 414px;"></div>
+</body>
+<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=usTi9C7kheKPnsA6hUcjNYKGKqRDsNtM"></script>-->
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=您申请的key值"></script>
+<script type="text/javascript">
+  var map = new AMap.Map('container', {
+    resizeEnable: true,
+    zoom:3,
+    center: [116.397428, 39.90923]
+  });
+  function editLine(){
+    var arr=new Array();//经纬度坐标数组
+    arr.push(new AMap.LngLat("116.368904","39.913423"));
+    arr.push(new AMap.LngLat("116.382122","39.901176"));
+    arr.push(new AMap.LngLat("116.387271","39.912501"));
+    arr.push(new AMap.LngLat("116.398258","39.904600"));
+
+    //定义折线对象
+    var polyline=new AMap.Polyline({
+      path:arr,     //设置折线的节点数组
+      strokeColor:"#F00",
+      strokeOpacity:0.4,
+      strokeWeight:3,
+      strokeStyle:"dashed",
+      strokeDasharray:[10,5]
+    });
+
+    polyline.setMap(map);//地图上添加折线
+
+    //构造折线编辑对象，并开启折线的编辑状态
+    map.plugin(["AMap.PolyEditor"],function(){
+      polylineEditor = new AMap.PolyEditor(mapObj,polyline);
+      polylineEditor.open();
+    });
+  }
+  editLine();
+</script>
+</html>

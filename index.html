@@ -91,10 +91,129 @@
                     <img src="./img/third/youtwo.png" width="100%" alt="">
                 </div>
             </li>
+
+            <li class="li_items">
+                <div class="fourth">
+                    <div class="fourth_bg">
+                        <img src="./img/fourth/1.png" height="300" alt="">
+                    </div>
+                    <div class="fourth_bg">
+                        <img src="./img/fourth/2.png" height="300" alt="">
+                    </div>
+                    <div class="fourth_bg">
+                        <img src="./img/fourth/3.png" height="300" alt="">
+                    </div>
+                    <div class="fourth_bg">
+                        <img src="./img/fourth/4.png" height="300" alt="">
+                    </div>
+                </div>
+            </li>
+
+            <!--第五-->
+            <li class="li_items">
+                <div class="fifth">
+                    <div class="fifth_bg">
+                        <img src="./img/fifth/1.png" height="300" alt="">
+                    </div>
+                    <div class="fifth_bg">
+                        <img src="./img/fifth/2.png" height="300" alt="">
+                    </div>
+                    <div class="fifth_bg">
+                        <img src="./img/fifth/3.jpg" height="300" alt="">
+                        <div class="door" style="background-image: url('./img/fifth/times.png')">
+                            <div class="door_one">
+                                <img src="./img/fifth/smalldoor.jpg" width="100%" height="100%" alt="">
+                            </div>
+                            <div class="door_two">
+                                <img src="./img/fifth/smalldoor.jpg" width="100%" height="100%" alt="">
+                            </div>
+                            <div class="door_three">
+                                <img src="./img/fifth/smalldoor.jpg" width="100%" height="100%" alt="">
+                            </div>
+                            <div class="door_four">
+                                <img src="./img/fifth/smalldoor.jpg" width="100%" height="100%" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fifth_bg">
+                        <img src="./img/fifth/4.png" height="300" alt="">
+                    </div>
+                    <div class="fifth_bg">
+                        <img src="./img/fifth/5.png" height="300" alt="">
+                    </div>
+                    <div class="fifth_wenzi">
+                        <div class="fifit_wenzi_bg" style="background-image: url('./img/fifth/wenzi5.png')">.</div>
+                        <div class="fifit_wenzi_bg" style="background-image: url('./img/fifth/wenzi5.png')">.</div>
+                        <div class="fifit_wenzi_bg" style="background-image: url('./img/fifth/wenzi5.png')">.</div>
+                        <div class="fifit_wenzi_bg" style="background-image: url('./img/fifth/wenzi5.png')">.</div>
+                    </div>
+                </div>
+                <div class="fifth_zhi">
+                    <div class=""><img src="./img/fifth/out.png" width="100%" alt=""></div>
+                    <div class="fifth_he"><img src="./img/fifth/he1.png" width="170" alt=""></div>
+                    <div class="fifth_id"><img src="./img/fifth/id.png" width="76" alt=""></div>
+                    <div class="fifth_zhang"><img src="./img/fifth/zhang.png" width="47" alt=""></div>
+                </div>
+                <!--花-->
+                <div class="fitth_flowers fifth_flowone">
+                    <img src="./img/fifth/flowers.png" width="80" alt="">
+                </div>
+                <div class="fitth_flowers fifth_flowtwo">
+                    <img src="./img/fifth/flowers.png" width="80" alt="">
+                </div>
+                <div class="fitth_flowers fifth_flowthree">
+                    <img src="./img/fifth/flowers.png" width="60" alt="">
+                </div>
+                <div class="fitth_flowers fifth_flowfour">
+                    <img src="./img/fifth/flowers.png" width="60" alt="">
+                </div>
+                <div class="fitth_flowers fifth_flowfive">
+                    <img src="./img/fifth/flowers.png" width="40" alt="">
+                </div>
+                <div class="fitth_flowers fifth_flowsix">
+                    <img src="./img/fifth/flowers.png" width="40" alt="">
+                </div>
+            </li>
+
+            <!--sixth-->
+            <li class="li_items">
+                <div class="sixth" style="background-image: url('./img/sixth/map.png')">
+                    <div class="sixth_map">
+                        <img src="./img/sixth/line.png" width="500" height="414" alt="">
+                    </div>
+                    <div class="sixth_zhe" style="background-image: url('./img/sixth/maps.jpg')"></div>
+                </div>
+                <div class="sixth_right">
+                    <div class="sixth_top">
+                        <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
+                        <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
+                        <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
+                        <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
+                    </div>
+                    <div class="sixth_bottom">
+                        <img src="./img/sixth/wenzi2.png" width="410" alt="">
+                    </div>
+                </div>
+                <div class="sixth_table">
+                    <div class="sixth_table_items sixth_title">
+                        <img src="./img/sixth/title.png" width="150" alt="">
+                    </div>
+                    <div class="sixth_table_items sixth_line">
+                        <img src="./img/sixth/jiantou.png" width="150" alt="">
+                    </div>
+                    <div class="sixth_table_items sixth_zhu">
+                        <img src="./img/sixth/zhu.png" width="150" alt="">
+                    </div>
+                </div>
+            </li>
+
+            <li class="li_items">
+                77
+            </li>
         </ul>
     </div>
     <div class="peoout" style="opacity: 0;">
-        <img class="peo" src="./img/people/1.png" height="200" alt="">
+        <img class="ple peo people" numb="1" src="./img/people/1.png" height="200" alt="">
     </div>
 </body>
 <script>
@@ -145,6 +264,7 @@
       this.tomove('.peoout','220px',4000,3);
       this.tomove('.out','-200%',4000,2);
       setTimeout(function () {
+        This.stopPeo('.peo');
         This.tomove('.third_bg','-235px',2000,2);
       },4000);
       setTimeout(function () {
@@ -153,6 +273,7 @@
         This.tomove('.third_wenzi','-25px',3000,3);
       },7000);
       setTimeout(function () {
+        This.noneToOut('.third_car',500);
         This.thirdCarRun('.third_lcar',200);
         This.thirdCarRun('.third_rcar',200,1);
       },8000);
@@ -160,12 +281,128 @@
         This.thirdCarRun('.third_ltwocar',50);
         This.thirdCarRun('.third_rtwocar',50,1);
       },10000);
+      setTimeout(function () {
+        This.peopleRun('.ple');
+        This.fourth();
+      },14000)
+//      14000
+    },
+    fourth:function () {
+      var This=this;
+      this.tomove('.out','-300%',4000,2);
+      setTimeout(function () {
+        This.stopPeo('.ple');
+        This.bgRun('.fourth_bg',1500,1500);
+      },4000);
+      setTimeout(function () {
+        This.tomove('.fourth','-180px',2000,2);
+      },8000);
+      setTimeout(function () {
+        This.peopleRun('.people');
+        This.fifth();
+      },10000);
+//      10000
+    },
+    fifth:function () {
+      var This=this;
+      this.tomove('.out','-400%',4000,2);
+      setTimeout(function () {
+        This.tomove('.fifth','-370px',2000,2);
+      },4000);
+      setTimeout(function () {
+        This.stopPeo('.people');
+        This.noneToOut('.fitth_flowers',1000);
+        This.toRound('.door_three');
+        This.toRound('.door_four');
+      },6000);
+      setTimeout(function () {
+        This.numRun('.fifit_wenzi_bg',1000,1000);
+      },7000);
+      setTimeout(function () {
+        This.textBig('.fifit_wenzi_bg',1000,500);
+      },8000);
+      setTimeout(function () {
+        This.noneToOut('.fifth_zhi',1000);
+        This.tomove('.fifth_he','25px',1000,3);
+        This.tomove('.fifth_id','90px',2000,3);
+      },10000);
+      setTimeout(function () {
+        This.tomove('.fifth_zhang','90px',500,3);
+      },12000);
+      setTimeout(function () {
+        This.tomove('.fifth_zhang','50px',500,3);
+        $('.fifth_he>img').attr('src','./img/fifth/he2.png')
+      },12800);
+      setTimeout(function () {
+        This.tomove('.fifth_zhang','125px',500,3);
+      },13500);
+      setTimeout(function () {
+        This.sixth();
+      },15000);
+    },
+    sixth:function () {
+      var This=this;
+      this.tomove('.peoout','-100',2000,2);
+      this.tomove('.out','-500%',4000,2);
+      setTimeout(function () {
+        This.widthToShort('.sixth_zhe');
+      },4000);
+      setTimeout(function () {
+        This.numRun('.sixth_times',1000,500);
+      },7000);
+      setTimeout(function () {
+        This.textBig('.sixth_times',1000,500);
+      },9000);
+      setTimeout(function () {
+        This.tomove('.sixth_bottom','15px',1000,1);
+      },10000);
+      setTimeout(function () {
+        This.tomove('.sixth_zhu','10px',1000,3);
+        This.noneToOut('.sixth_line',1000);
+        This.noneToOut('.sixth_title',1000);
+      },11000);
+      setTimeout(function () {
+        This.seventh();
+      },13000);
+    },
+    seventh:function () {
+      var This=this;
+      this.tomove('.out','-600%',4000,2);
+    },
+    //宽度变短
+    widthToShort:function (obj) {
+      $(obj).animate({'width':'0'},3000);
+    },
+    //门旋转
+    toRound:function (obj) {
+      var num=0;
+      var timer=0;
+      timer=setInterval(function () {
+        num+=1;
+        if (num>=130){
+          clearTimeout(timer);
+        }
+        $(obj).css({'transform':'rotateY('+num+'deg)'});
+      },1000/60)
     },
     //初始化
     liToInit:function () {
       for (var i=0;i<$('.li_items').length;i++){
         $('.li_items').eq(i).css({'left':100*i+'%'});
       }
+    },
+
+    //人停止
+    stopPeo:function (obj) {
+      var num=0;
+      var cla=obj.substring(1);
+      var timers=setInterval(function () {
+        num=$(obj).attr('numb');
+        if (num>=16){
+          $(obj).attr('src','./img/people/17.png');
+          $(obj).removeClass(cla);
+        }
+      },100);
     },
 
     //车移动
@@ -199,6 +436,7 @@
       }
     },
 
+    //背景上来
     bgRun:function (numRun,times,times2) {
       var num=0;
       for (var i=0;i<$(numRun).length;i++){
@@ -209,6 +447,7 @@
         })(i)
       }
     },
+
     //display none to block
     toblock:function (cla) {
         $(cla).css({'display':'block'});
@@ -269,13 +508,15 @@
 
     //人走路
     peopleRun:function (peo) {
+      $(peo).attr('src','./img/people/1.png');
       var num=0;
       var timer2=setInterval(function () {
         num+=1;
         if (num>16){
           num=1;
         }
-        $(peo).attr('src','./img/people/'+num+'.png')
+        $(peo).attr('src','./img/people/'+num+'.png');
+        $(peo).attr('numb',num);
       },100)
     },
 
@@ -312,6 +553,30 @@
         (function (i) {
           setTimeout(function () {
             $(numRun).eq(i).animate({'opacity':1},times);
+          },i*times2)
+        })(i)
+      }
+    },
+
+    //字顺序放大缩小
+    textBig:function (obj,times,times2) {
+      for (var i=0;i<$(obj).length;i++){
+        (function (i) {
+          setTimeout(function () {
+            var num=1;
+            var times=0;
+            var j=0.1;
+            var timer=setInterval(function () {
+              num+=j;
+              if (num>=2||num<=1){
+                j=-j;
+                times+=1;
+              }
+              if (times>=4){
+                clearTimeout(timer);
+              }
+              $(obj).eq(i).css({'transform':'scale('+num+')'});
+            },1000/60);
           },i*times2)
         })(i)
       }
