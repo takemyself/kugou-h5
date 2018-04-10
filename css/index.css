@@ -181,14 +181,19 @@ body{
     left: -100px;
     top: 180px;
 }
-
+.car{
+    position: fixed;
+    left: -270px;
+    top: 270px;
+    display: none;
+}
 .third_bg{
     position: absolute;
     top: 0;
     left:0;
 }
 .third_mid{
-    width: 200px;
+    width: 180px;
     height: 25px;
     position: absolute;
     opacity: 0;
@@ -196,7 +201,7 @@ body{
     left: 35%;
 }
 .third_wenzi{
-    width: 300px;
+    width: 240px;
     height: 174px;
     position: absolute;
     left: 5px;
@@ -432,6 +437,92 @@ body{
 }
 .sixth_table_items:nth-of-type(3){
     top: 100px;
+}
+.sevevth_out{
+    width: 2050px;
+    height: 414px;
+    position: absolute;
+    left: 0px;
+    top: 0;
+}
+.sevevth_wall{
+    /*width: 100%;*/
+    /*height: 300px;*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    font-size: 0;
+    float: left;
+}
+.sevevth_bgout{
+    float: left;
+    margin-top: 119px;
+}
+.sevevth{
+    width: 2000px;
+    height: 300px;
+    float: left;
+    position: absolute;
+    border-bottom: 3px solid #ccc;
+    left: 200px;
+    top: 0;
+    overflow: hidden;
+}
+.sevevth_bg{
+    margin-top: 150px;
+    float: left;
+}
+.sevevth_tower1,.sevevth_tower2,.sevevth_tower3,.sevevth_house,.sevevth_tree,.sevevth_lou,.sevevth_wenzi1,.sevevth_wenzi2,.sevevth_year{
+    position: absolute;
+    left: 240px;
+    top: 30px;
+}
+.sevevth_grass{
+    position: absolute;
+    left: 160px;
+    top: 210px;
+}
+.sevevth_tower1{
+    left: 240px;
+    top: -310px;
+}
+.sevevth_tower2{
+    left: 370px;
+    top: -260px;
+}
+.sevevth_tower3{
+    left: 580px;
+    top: -240px;
+}
+.sevevth_house{
+    left: 935px;
+    top: 105px;
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+}
+.sevevth_tree{
+    left: 1245px;
+    top: 50px;
+    transform-origin: left bottom;
+    transform: rotate(90deg);
+}
+.sevevth_lou{
+    left: 1320px;
+    top: 0;
+}
+.sevevth_wenzi1{
+    left: 450px;
+    top: 10px;
+}
+.sevevth_wenzi2{
+    left: 1255px;
+    top: 10px;
+}
+.sevevth_year{
+    left: 0;
+    top: 200px;
+    opacity: 0;
 }
 @media (max-width: 414px) {
     .first_third{

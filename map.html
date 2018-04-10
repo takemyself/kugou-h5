@@ -15,7 +15,7 @@
 </body>
 <script>
   var myChart = echarts.init(document.getElementById('main'));
-  var uploadedDataURL = "js/data-1517645039291-B1vgpymUz.json";
+  var uploadedDataURL = "./js/data-1517645039291-B1vgpymUz.json";
 
   $.getJSON(uploadedDataURL, function(geoJson) {
     echarts.registerMap('zhongguo', geoJson);
