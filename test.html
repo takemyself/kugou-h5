@@ -14,120 +14,46 @@
 <div class="warp">
     <ul class="out">
         <li class="li_items">
-            <div class="sevevth_out">
-                <div class="sevevth_wall">
-                    <img src="./img/seventh/wall1.jpg" height="414" alt="">
-                    <img src="./img/seventh/wall2.png" height="414" alt="">
-                </div>
-                <div class="sevevth">
-                    <!--2016-->
-                    <div class="sevevth_year">
-                        <img src="./img/seventh/2016.png" width="180" alt="">
-                    </div>
-                    <!--塔-->
-                    <div class="sevevth_tower1">
-                        <img src="./img/seventh/tower1.png" height="300" alt="">
-                    </div>
-                    <div class="sevevth_tower2">
-                        <img src="./img/seventh/tower2.png" height="300" alt="">
-                    </div>
-                    <div class="sevevth_tower3">
-                        <img src="./img/seventh/tower3.png" height="300" alt="">
-                    </div>
-                    <!--房子-->
-                    <div class="sevevth_house">
-                        <img src="./img/seventh/house.png" height="200" alt="">
-                    </div>
-                    <!--树-->
-                    <div class="sevevth_tree">
-                        <img src="./img/seventh/tree.png" height="250" alt="">
-                    </div>
-                    <!--小蛮腰-->
-                    <div class="sevevth_lou">
-                        <img src="./img/seventh/lou.png" height="300" alt="">
-                    </div>
-                    <!--草-->
-                    <div class="sevevth_grass">
-                        <img src="./img/seventh/grass.png" height="93" alt="">
-                    </div>
-                    <!--文字-->
-                    <div class="sevevth_wenzi1">
-                        <img src="./img/seventh/wenzi1.png" width="400" alt="">
-                    </div>
-                    <div class="sevevth_wenzi2">
-                        <img src="./img/seventh/wenzi2.png" width="300" alt="">
-                    </div>
-                    <!--背景-->
-                    <div class="sevevth_bgout">
-                        <div class="sevevth_bg">
-                            <img src="./img/seventh/tree1.png" height="181" alt="">
-                        </div>
-                        <div class="sevevth_bg">
-                            <img src="./img/seventh/tree2.png" height="181" alt="">
-                        </div>
-                        <div class="sevevth_bg">
-                            <img src="./img/seventh/tree3.png" height="181" alt="">
-                        </div>
-                        <div class="sevevth_bg">
-                            <img src="./img/seventh/tree4.png" height="181" alt="">
-                        </div>
-                        <div class="sevevth_bg">
-                            <img src="./img/seventh/tree5.png" height="181" alt="">
-                        </div>
-                        <div class="sevevth_bg">
-                            <img src="./img/seventh/tree6.png" height="181" alt="">
-                        </div>
-                        <div class="sevevth_bg">
-                            <img src="./img/seventh/tree7.png" height="181" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </li>
     </ul>
 </div>
-<div class="peoout" style="left: 10px;z-index: 1">
-    <img class="ple peo people person" numb="1" src="./img/people/1.png" height="200" alt="">
-</div>
 <div class="car">
-    <img src="./img/seventh/car.png" height="100" alt="">
+    <img class="car_car" src="./img/seventh/car.png" height="100" alt="">
+    <div class="car_left">
+        <img class="car_lun" src="./img/seventh/lun.png" width="100%" alt="">
+    </div>
+    <div class="car_left car_right">
+        <img class="car_lun" src="./img/seventh/lun.png" width="100%" alt="">
+    </div>
 </div>
 <!--150 -100-->
+
 </body>
 <script>
   var allAni = {
     init: function () {
       var This=this;
-      $('.peoout').css({'top':'150px'});
-      This.peopleRun('.person');
 
+    },
+
+    rounds:function (obj,sta,adds,deg) {
+      var num=sta;
+      var timer=setInterval(function () {
+        num+=adds;
+        if (num>=deg){
+          clearInterval(timer);
+        }
+        $(obj).css({'transform':'rotate('+num+'deg)'})
+      },1000/60)
+    },
+    test:function () {
+      var num=0;
+      var str='<div class="suipian" style="background-color: yellow;transform: rotate3d(1,5,1,40deg) scale(2);"></div>';
       setTimeout(function () {
-        This.alltomove('.peoout',-100,300,3,20,2);
-        This.noneToOut('.sevevth_year',2000);
-        This.tomove('.sevevth_tower1','30',1000,3);
-      },4000);
-      setTimeout(function () {
-        This.bgRun('.sevevth_bg',1000,1000);
-        This.tomove('.sevevth_tower2','0',1000,3);
-      },5000);
-      setTimeout(function () {
-        This.tomove('.sevevth_tower3','45',1000,3);
-        This.alltomove('.sevevth_out',0,-1402,-3,20,2);
-      },6700);
-      setTimeout(function () {
-        This.alltomove('.peoout',300,-100,-3,20,2);
-      },8000),
-      setTimeout(function () {
-        This.toblock('.car');
-        This.alltomove('.car',-270,200,3,20,2);
-      },10500),
-      setTimeout(function () {
-        This.stopPeo('.person');
-        This.toDeg('.sevevth_house',90,1);
-      },11000);
-      setTimeout(function () {
-        This.toDeg('.sevevth_tree',90,1);
-      },12000);
+        num+=1;
+        $('.eighth_text4').append(str);
+      },100);
     },
     widthToShort:function (obj) {
       $(obj).animate({'width':'0'},3000);
@@ -144,6 +70,7 @@
         $(obj).css({'transform':'rotate('+num+'deg)'})
       },1000/60)
     },
+
     alltomove:function (cla,sta,end,adds,times,direction) {
       var num=sta;
       var lastNum=0;

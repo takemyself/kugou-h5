@@ -59,11 +59,20 @@
             <!--second-->
             <li class="li_items">
                 <div class="second_bg">
+                    <div class="second_moun1">
+                        <img src="./img/second/mountain1.png" height="250" alt="">
+                    </div>
+                    <div class="second_moun2">
+                        <img src="./img/second/mountain2.png" height="250" alt="">
+                    </div>
                     <div class="second_lou">
                         <div class="second_items"><img src="./img/second/lou1.png" alt=""></div>
                         <div class="second_items"><img src="./img/second/lou2.png" alt=""></div>
                         <div class="second_items"><img src="./img/second/lou3.png" alt=""></div>
                         <div class="second_items"><img src="./img/second/lou4.png" alt=""></div>
+                    </div>
+                    <div class="second_grass">
+                        <img src="./img/second/grass.png" height="50" alt="">
                     </div>
                     <div class="second_year">
                         <span class="second_num" style="background-image:url('./img/second/2015.png')">.</span>
@@ -187,26 +196,28 @@
                     </div>
                     <div class="sixth_zhe" style="background-image: url('./img/sixth/maps.jpg')"></div>
                 </div>
-                <div class="sixth_right">
-                    <div class="sixth_top">
-                        <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
-                        <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
-                        <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
-                        <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
+                <div class="sixth_zhezhao">
+                    <div class="sixth_right">
+                        <div class="sixth_top">
+                            <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
+                            <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
+                            <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
+                            <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
+                        </div>
+                        <div class="sixth_bottom">
+                            <img src="./img/sixth/wenzi2.png" width="410" alt="">
+                        </div>
                     </div>
-                    <div class="sixth_bottom">
-                        <img src="./img/sixth/wenzi2.png" width="410" alt="">
-                    </div>
-                </div>
-                <div class="sixth_table">
-                    <div class="sixth_table_items sixth_title">
-                        <img src="./img/sixth/title.png" width="150" alt="">
-                    </div>
-                    <div class="sixth_table_items sixth_line">
-                        <img src="./img/sixth/jiantou.png" width="150" alt="">
-                    </div>
-                    <div class="sixth_table_items sixth_zhu">
-                        <img src="./img/sixth/zhu.png" width="150" alt="">
+                    <div class="sixth_table">
+                        <div class="sixth_table_items sixth_title">
+                            <img src="./img/sixth/title.png" width="300" alt="">
+                        </div>
+                        <div class="sixth_table_items sixth_line">
+                            <img src="./img/sixth/jiantou.png" width="300" alt="">
+                        </div>
+                        <div class="sixth_table_items sixth_zhu">
+                            <img src="./img/sixth/zhu.png" width="300" alt="">
+                        </div>
                     </div>
                 </div>
             </li>
@@ -283,13 +294,63 @@
                     </div>
                 </div>
             </li>
+
+            <!--eighth-->
+            <li class="li_items">
+                <div class="eighth">
+                    <!--backgrond-->
+                    <div class="eighth_bg">
+                        <img src="./img/eighth/xiaomanyao.png" height="300" alt="">
+                    </div>
+                    <div class="eighth_bg">
+                        <img src="./img/eighth/lou.png" height="300" alt="">
+                    </div>
+                    <div class="eighth_bg">
+                        <img src="./img/eighth/jianying.png" height="100" alt="">
+                    </div>
+                    <!--car-->
+                    <div class="eighth_car1">
+                        <img src="./img/eighth/tesila.png" height="40" alt="">
+                    </div>
+                    <div class="eighth_car2">
+                        <img src="./img/eighth/jiebao.png" height="50" alt="">
+                    </div>
+                    <div class="eighth_car3">
+                        <img src="./img/eighth/luhu.png" height="50" alt="">
+                    </div>
+                    <!--time-->
+                    <div class="eighth_time">
+                        <img src="./img/eighth/2017.png" height="40" alt="">
+                    </div>
+                    <!--text-->
+                    <div class="eighth_text1">
+                        <img src="./img/eighth/wenzi1.png" width="200" alt="">
+                    </div>
+                    <div class="eighth_text2">
+                        <img src="./img/eighth/wenzi2.png" width="200" alt="">
+                    </div>
+                    <div class="eighth_text3">
+                        <img src="./img/eighth/wenzi3.png" width="200" alt="">
+                    </div>
+                    <div class="eighth_text4">
+                        <img src="./img/eighth/text4.png" width="300" alt="">
+                        <!--<div class="suipian"></div>-->
+                    </div>
+                </div>
+            </li>
         </ul>
     </div>
     <div class="peoout" style="opacity: 0;">
         <img class="ple peo people person" numb="1" src="./img/people/1.png" height="200" alt="">
     </div>
     <div class="car">
-        <img src="./img/seventh/car.png" height="100" alt="">
+        <img class="car_car" src="./img/seventh/car.png" height="100" alt="">
+        <div class="car_left">
+            <img src="./img/seventh/lun.png" width="100%" alt="">
+        </div>
+        <div class="car_left car_right">
+            <img src="./img/seventh/lun.png" width="100%" alt="">
+        </div>
     </div>
 </body>
 <script>
@@ -325,22 +386,25 @@
       this.alltomove('.out',0,-735,-3,20,2);
       setTimeout(function () {
         This.bgRun('.second_items',500,3000);
-      },3000);
-      setTimeout(function () {
         This.numRun('.second_num',2000,1000);
-      },5000);
+      },3000);
+
       this.peopleRun('.peo');
       setTimeout(function () {
         This.noneToOut('.peoout');
         This.alltomove('.peoout',-100,300,3,20,2);
       },5000);
       setTimeout(function () {
-        This.alltomove('.second_lou',0,-736,-3,20,2);
+        This.toDeg('.second_moun1',90,1);
+        This.alltomove('.second_bg',0,-736,-3,20,2);
       },7500);
+      setTimeout(function () {
+        This.alltomove('.second_grass',295,245,-3,20,3);
+        This.toDeg('.second_moun2',90,1);
+      },10000);
       setTimeout(function () {
         This.third();
       },12400);
-//      16000
     },
     third:function () {
       var This=this;
@@ -368,30 +432,28 @@
         This.thirdCarRun('.third_rtwocar',50,1);
       },10000);
       setTimeout(function () {
-        This.peopleRun('.ple');
+        This.peopleRun('.people');
         This.fourth();
       },12000)
-//      14000
     },
     fourth:function () {
       var This=this;
-      this.alltomove('.out',-1470,-2205,-3,20,2);
+      this.alltomove('.out',-1470,-2207,-3,20,2);
+
       setTimeout(function () {
-        This.stopPeo('.ple');
-        This.bgRun('.fourth_bg',1500,1500);
+        This.bgRun('.fourth_bg',800,800);
       },4500);
       setTimeout(function () {
-        This.tomove('.fourth','-180px',2000,2);
-      },8000);
+        This.alltomove('.fourth',0,-180,-3,20,2);
+      },4900);
       setTimeout(function () {
-        This.peopleRun('.people');
         This.fifth();
-      },10000);
-//      10000
+      },6100);
     },
     fifth:function () {
       var This=this;
-      this.alltomove('.out',-2205,-2940,-3,20,2);
+      this.alltomove('.peoout',300,100,-1,20,2);
+      this.alltomove('.out',-2207,-2942,-3,20,2);
       setTimeout(function () {
         This.alltomove('.fifth',0,-370,-3,20,2);
       },4900);
@@ -404,9 +466,6 @@
       setTimeout(function () {
         This.numRun('.fifit_wenzi_bg',1000,1000);
       },7000);
-//      setTimeout(function () {
-//        This.textBig('.fifit_wenzi_bg',1000,500);
-//      },8000);
       setTimeout(function () {
         This.noneToOut('.fifth_zhi',1000);
         This.tomove('.fifth_he','25px',1000,3);
@@ -428,25 +487,25 @@
     },
     sixth:function () {
       var This=this;
-      this.tomove('.peoout','-100',2200,2);
-      this.tomove('.out','-500%',4000,2);
+      this.alltomove('.peoout',100,-100,-3,20,2);
+      this.alltomove('.out',-2942,-3680,-3,20,2);
       setTimeout(function () {
         This.widthToShort('.sixth_zhe');
       },4000);
       setTimeout(function () {
+        This.alltomove('.sixth_zhezhao',736,0,-8,20,2)
+      },6000);
+      setTimeout(function () {
         This.numRun('.sixth_times',1000,500);
-      },7000);
-//      setTimeout(function () {
-//        This.textBig('.sixth_times',1000,500);
-//      },9000);
+      },8000);
       setTimeout(function () {
         This.tomove('.sixth_bottom','15px',1000,1);
-      },10000);
+      },9000);
       setTimeout(function () {
-        This.tomove('.sixth_zhu','10px',1000,3);
+        This.alltomove('.sixth_zhu',235,10,-3,20,3);
         This.noneToOut('.sixth_line',1000);
         This.noneToOut('.sixth_title',1000);
-      },11000);
+      },10000);
       setTimeout(function () {
         This.seventh();
       },13000);
@@ -474,6 +533,7 @@
       },8000);
       setTimeout(function () {
         This.toblock('.car');
+        This.rounds('.car_left',0,20,50000);
         This.alltomove('.car',-270,200,3,20,2);
       },10500);
       setTimeout(function () {
@@ -483,8 +543,44 @@
         This.stopPeo('.person');
         This.toDeg('.sevevth_tree',90,1);
       },12000);
+      setTimeout(function () {
+        This.eighth();
+      },16000);
     },
+    eighth:function () {
+      var This=this;
+      this.alltomove('.out',-4416,-5152,-3,20,2);
+      setTimeout(function () {
+        This.alltomove('.eighth',0,-2944,-3,20,2);
+      },4900);
+      setTimeout(function () {
+        This.alltomove('.car',200,-270,-3,20,2);
+      },5900);
+      setTimeout(function () {
+        $('.car_car').attr('src','./img/eighth/car1.png');
+        $('.car_lun').attr('src','./img/eighth/lun1.png');
+      },8900);
+      setTimeout(function () {
+        This.alltomove('.car',-270,200,3,20,2);
+      },9400);
 
+      setTimeout(function () {
+        This.alltomove('.car',200,-270,-3,20,2);
+      },12900);
+      setTimeout(function () {
+        $('.car_car').attr('src','./img/eighth/car2.png');
+        $('.car_lun').attr('src','./img/eighth/lun2.png');
+      },15900);
+      setTimeout(function () {
+        This.alltomove('.car',-270,200,4,20,2);
+      },16400);
+      setTimeout(function () {
+        This.ninth();
+      },20400);
+    },
+    ninth:function () {
+
+    },
 
     rounds:function (obj,sta,adds,deg) {
       var num=sta;
@@ -569,6 +665,14 @@
         num+=adds;
         lastNum=num-end;
         if(lastNum>-4&&lastNum<4){
+          num=end;
+          if(direction==1){
+            $(cla).css({'right':num+'px'});
+          }else if (direction==2){
+            $(cla).css({'left':num+'px'});
+          }else if(direction==3){
+            $(cla).css({'top':num+'px'});
+          }
           clearInterval(timer);
         }
         if(direction==1){
