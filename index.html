@@ -338,6 +338,104 @@
                     </div>
                 </div>
             </li>
+
+            <!--nigth-->
+            <li class="li_items">
+                <div class="nigth_top">
+                    <div class="nigth_items">
+                        <img src="./img/nigth/1.png" width="100%" height="180" alt="">
+                    </div>
+                    <div class="nigth_items">
+                        <img src="./img/nigth/2.png" width="100%" height="180" alt="">
+                    </div>
+                    <div class="nigth_items">
+                        <img src="./img/nigth/3.png" width="100%" height="180" alt="">
+                    </div>
+                    <div class="nigth_items">
+                        <img src="./img/nigth/4.png" width="100%" height="180" alt="">
+                    </div>
+                    <div class="nigth_items">
+                        <img src="./img/nigth/5.png" width="100%" height="180" alt="">
+                    </div>
+                    <div class="nigth_text">
+                        <div class="nigth_text_bg" style="background-image: url('./img/nigth/wenzi.png')"></div>
+                        <div class="nigth_text_bg" style="background-image: url('./img/nigth/wenzi.png')"></div>
+                        <div class="nigth_text_bg" style="background-image: url('./img/nigth/wenzi.png')"></div>
+                        <div class="nigth_textbg">
+                            <img src="./img/nigth/wenzi62.png" width="100%" alt="">
+                        </div>
+                        <div class="nigth_textbg">
+                            <img src="./img/nigth/wenzi200.png" width="100%" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="nigth_bottom">
+                    <div class="nigth_bottom_bg">
+                        <img src="./img/nigth/floor.png" height="214" alt="">
+                    </div>
+                    <div class="nigth_ple">
+                        <img src="./img/nigth/ple.png" width="100%" alt="">
+                    </div>
+                    <div class="nigth_times">
+                        <img src="./img/nigth/timeout.png" width="100" alt="">
+                        <div class="nigth_year">
+                            <img src="./img/nigth/time.png" width="70" alt="">
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!--tenth-->
+            <li class="li_items">
+                <img src="./img/tenth/bg.png" width="100%" alt="">
+                <div class="tenth_road">
+                    <img src="./img/tenth/road.png" width="736" alt="">
+                    <div class="tenth_run tenth_run1">
+                        <img src="./img/tenth/run1.png" alt="">
+                    </div>
+                    <div class="tenth_run tenth_run2">
+                        <img src="./img/tenth/run2.png" alt="">
+                    </div>
+                    <div class="tenth_run tenth_run3">
+                        <img src="./img/tenth/run3.png" alt="">
+                    </div>
+                    <div class="tenth_run tenth_run4">
+                        <img src="./img/tenth/run4.png" width="120" alt="">
+                    </div>
+                    <div class="tenth_run tenth_run5">
+                        <img src="./img/tenth/run5.png" width="74" alt="">
+                    </div>
+                    <div class="tenth_run tenth_run6">
+                        <img src="./img/tenth/run6.png" alt="">
+                    </div>
+                    <div class="tenth_runcar">
+                        <img src="./img/tenth/car.png" alt="">
+                    </div>
+                </div>
+                <div class="tenth_road tenth_road_run">
+                    <img src="./img/tenth/road.png" width="736" alt="">
+                </div>
+            </li>
+
+            <!--eleventh-->
+            <li class="li_items">
+                <img src="./img/eleventh/bg.jpg" width="736" alt="">
+                <div class="eleventh">
+                    <img class="eleventh_circle" src="./img/eleventh/circle1.png" height="414" alt="">
+                    <div class="eleventh_bg">
+                        <img class="eleventh_bglu" src="./img/eleventh/lu1.png" width="900" alt="">
+                    </div>
+                    <div class="eleventh_bottombg">
+                        <img class="eleventh_bgtop" src="./img/eleventh/top1.png" width="900" alt="">
+                    </div>
+                    <div class="eleventh_car">
+                        <img src="./img/eleventh/car1.png" alt="">
+                    </div>
+                </div>
+                <div class="eleventh_text">
+                    <img src="./img/eleventh/text.png" width="100%" alt="">
+                </div>
+            </li>
         </ul>
     </div>
     <div class="peoout" style="opacity: 0;">
@@ -576,10 +674,130 @@
       },16400);
       setTimeout(function () {
         This.ninth();
-      },20400);
+      },19500);
     },
     ninth:function () {
+      var This=this;
+      this.alltomove('.out',-5152,-5888,-3,20,2);
+      This.alltomove('.car',200,-270,-3,20,2);
+      this.peoMore();
+      setTimeout(function () {
+        This.numRun('.nigth_text_bg',1000,1000);
+        This.toDeg('.nigth_times',110,5);
+        This.numRun('.night_peo',1000,100);
+      },4900);
+      setTimeout(function () {
+        This.numRun('.nigth_textbg',1000,1500);
+      },6900);
+      setTimeout(function () {
+        This.tenth();
+      },9000);
+    },
+    tenth:function () {
+      var This=this;
+      this.alltomove('.out',-5888,-6624,-3,20,2);
+      setTimeout(function () {
+        This.alltomove('.tenth_runcar',414,280,-3,20,3);
+      },4900);
+      setTimeout(function () {
+        This.carTenRun('.tenth_runcar');
+      },7000);
+      setTimeout(function () {
+        This.roadRun('.tenth_run1');
+      },5000);
+      setTimeout(function () {
+        This.roadRun('.tenth_road_run');
+      },5000);
+      setTimeout(function () {
+        This.roadRun('.tenth_run4');
+      },5100);
+      setTimeout(function () {
+        This.roadRun('.tenth_run2');
+      },5200);
+      setTimeout(function () {
+        This.roadRun('.tenth_run5');
+      },5300);
+      setTimeout(function () {
+        This.roadRun('.tenth_run3');
+      },5400);
+      setTimeout(function () {
+        This.roadRun('.tenth_run6');
+      },5500);
+      setTimeout(function () {
+        This.eleventh();
+      },9500);
+    },
+    eleventh:function () {
+      var This=this;
+      this.alltomove('.out',-6624,-7360,-3,20,2);
+      setTimeout(function () {
+        This.carEleRun('.eleventh_car');
+        This.rounds('.eleventh_circle',0,1,720);
+        This.bgEleRun('.eleventh_circle','circle');
+        This.bgEleRun('.eleventh_bglu','lu');
+        This.bgEleRun('.eleventh_bgtop','top');
+      },4900);
+      setTimeout(function () {
+        This.alltomove('.eleventh_text',-515,210,25,20,2);
+      },5500);
+      setTimeout(function () {
+        This.rounds('.eleventh_text',0,5,360);
+      },5800);
+    },
 
+    bgEleRun:function (obj,bg) {
+      var num=1;
+      var timer=setInterval(function () {
+        num+=1;
+        if(num>=3){
+          clearInterval(timer);
+        }
+        $(obj).attr('src','./img/eleventh/'+bg+num+'.png')
+      },1000);
+    },
+
+    carEleRun:function (obj) {
+      var num=1;
+      var timer=setInterval(function () {
+        num-=0.02;
+        if(num<=0.3){
+          clearInterval(timer);
+        }
+        $(obj).css({'transform':'scale('+num+')'});
+      },100);
+    },
+
+    carTenRun:function (obj) {
+      var num=1;
+      var timer=setInterval(function () {
+        num-=0.05;
+        if(num<=0){
+          clearInterval(timer);
+        }
+        $(obj).css({'transform':'scale('+num+')'});
+      },100);
+    },
+    roadRun:function (obj) {
+      var num=0;
+      var timer=setInterval(function () {
+        num+=0.1;
+        if(num>=1){
+          num=0;
+        }
+        $(obj).css({'transform':'scale('+num+')'});
+      },100);
+    },
+    peoMore:function () {
+      for (var i=1;i<6;i++){
+        for (var j=1;j<i+3;j++){
+          var rand=Math.ceil(Math.random()*4);
+          var le=250-i*45+j*80;
+          var to=-15*i;
+          var z=6-i;
+          var str='<div class="night_peo" style="opacity:0;position: absolute;width: 65px;z-index:'+z+';left:'+le+'px;top: '+to+'px;"><img src="./img/nigth/ren'+rand+'.png" width="100%"></div>';
+          $('.nigth_bottom').append(str);
+        }
+      }
     },
 
     rounds:function (obj,sta,adds,deg) {

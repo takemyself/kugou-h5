@@ -581,7 +581,7 @@ body{
     width: 5000px;
     height: 300px;
     position: absolute;
-    border: 3px solid #ccc;
+    border-bottom: 3px solid #ccc;
     left: 0;
     top:0;
 }
@@ -641,6 +641,149 @@ body{
     height: 10px;
     background: red;
     transform: rotate3d(1,0,1,40deg) scale(4);
+}
+.nigth_top{
+    width: 900px;
+    position: absolute;
+    left: -20px;
+    top: 20px;
+}
+.nigth_items{
+    width: 18%;
+    float: left;
+}
+.nigth_bottom{
+    position: absolute;
+    left: 0;
+    top: 200px;
+}
+.nigth_text{
+    position: absolute;
+    width: 150px;
+    height: 120px;
+    left: 320px;
+    top: 35px;
+}
+.nigth_text_bg{
+    width: 100%;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 150px 100px;
+    opacity: 0;
+}
+.nigth_text_bg:first-of-type{
+    background-position: 0 -13px;
+}
+.nigth_text_bg:nth-of-type(2){
+    background-position: 0 -36px;
+}
+.nigth_text_bg:nth-of-type(3){
+    background-position: 0 -60px;
+}
+.nigth_ple{
+    position: absolute;
+    width: 64px;
+    left: 382px;
+    top: 0;
+    z-index: 10;
+}
+.nigth_times{
+    position: absolute;
+    right: 80px;
+    top: 20px;
+    transform-origin: left bottom;
+    transform: rotate(110deg);
+}
+.nigth_year{
+    position: absolute;
+    left: 15px;
+    top: 35px;
+}
+.nigth_textbg{
+    position: absolute;
+    left: 0;
+    top: -2px;
+    opacity: 0;
+}
+.nigth_textbg:last-of-type{
+    top: 9px;
+}
+
+.tenth_road{
+    position: absolute;
+    /*width: 100%;*/
+    left: 0;
+    top: 0;
+}
+.tenth_road_run{
+    transform-origin: 446px 170px;
+    transform: scale(0);
+}
+.tenth_run{
+    position: absolute;
+    transform-origin: 446px 170px;
+    transform: scale(0);
+}
+.tenth_run1{
+    left: 30px;
+    top: 10px;
+}
+.tenth_run2{
+    left: 30px;
+    top: 20px;
+}
+.tenth_run3{
+    left: 30px;
+    top: 300px;
+    transform-origin: 450px -150px;
+}
+.tenth_run4{
+    left: 620px;
+    top: 195px;
+    transform-origin: -200px -30px;
+}
+.tenth_run5{
+    left: 680px;
+    top: 380px;
+    transform-origin: -270px -240px;
+}
+.tenth_run6{
+    left: 625px;
+    top: 380px;
+    transform-origin: -200px -240px;
+}
+.tenth_runcar{
+    position: absolute;
+    left: 117px;
+    top: 414px;
+    transform-origin: 330px -120px;
+}
+
+.eleventh{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.eleventh_car{
+    position: absolute;
+    left: 545px;
+    top: 300px;
+    transform-origin: -776px -92px;
+}
+.eleventh_text{
+    position: absolute;
+    left: -515px;
+    top: 210px;
+}
+.eleventh_bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.eleventh_bottombg{
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 @media (max-width: 414px) {
     .first_third{

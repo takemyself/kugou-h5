@@ -14,29 +14,142 @@
 <div class="warp">
     <ul class="out">
         <li class="li_items">
+            <img src="./img/tenth/bg.png" width="100%" alt="">
+            <div class="tenth_road">
+                <img src="./img/tenth/road.png" width="736" alt="">
+                <div class="tenth_run tenth_run1">
+                    <img src="./img/tenth/run1.png" alt="">
+                </div>
+                <div class="tenth_run tenth_run2">
+                    <img src="./img/tenth/run2.png" alt="">
+                </div>
+                <div class="tenth_run tenth_run3">
+                    <img src="./img/tenth/run3.png" alt="">
+                </div>
+                <div class="tenth_run tenth_run4">
+                    <img src="./img/tenth/run4.png" width="120" alt="">
+                </div>
+                <div class="tenth_run tenth_run5">
+                    <img src="./img/tenth/run5.png" width="74" alt="">
+                </div>
+                <div class="tenth_run tenth_run6">
+                    <img src="./img/tenth/run6.png" alt="">
+                </div>
+                <div class="tenth_runcar">
+                    <img src="./img/tenth/car.png" alt="">
+                </div>
+            </div>
+            <div class="tenth_road tenth_road_run">
+                <img src="./img/tenth/road.png" width="736" alt="">
+            </div>
+        </li>
 
+        <li class="li_items" style="left: 736px">
+            <img src="./img/eleventh/bg.jpg" width="736" alt="">
+            <div class="eleventh">
+                <img class="eleventh_circle" src="./img/eleventh/circle1.png" height="414" alt="">
+                <div class="eleventh_bg">
+                    <img class="eleventh_bglu" src="./img/eleventh/lu1.png" width="900" alt="">
+                </div>
+                <div class="eleventh_bottombg">
+                    <img class="eleventh_bgtop" src="./img/eleventh/top1.png" width="900" alt="">
+                </div>
+                <div class="eleventh_car">
+                    <img src="./img/eleventh/car1.png" alt="">
+                </div>
+            </div>
+            <div class="eleventh_text">
+                <img src="./img/eleventh/text.png" width="100%" alt="">
+            </div>
         </li>
     </ul>
 </div>
-<div class="car">
-    <img class="car_car" src="./img/seventh/car.png" height="100" alt="">
-    <div class="car_left">
-        <img class="car_lun" src="./img/seventh/lun.png" width="100%" alt="">
-    </div>
-    <div class="car_left car_right">
-        <img class="car_lun" src="./img/seventh/lun.png" width="100%" alt="">
-    </div>
-</div>
-<!--150 -100-->
-
 </body>
 <script>
   var allAni = {
     init: function () {
       var This=this;
-
+      setTimeout(function () {
+        This.tests();
+      },200);
+    },
+    tests:function () {
+      var This=this;
+      this.alltomove('.out',0,-736,-21,20,2);
+      setTimeout(function () {
+        This.carEleRun('.eleventh_car');
+        This.rounds('.eleventh_circle',0,1,720);
+        This.bgEleRun('.eleventh_circle','circle');
+        This.bgEleRun('.eleventh_bglu','lu');
+        This.bgEleRun('.eleventh_bgtop','top');
+      },500);
+      setTimeout(function () {
+        This.alltomove('.eleventh_text',-515,210,25,20,2);
+      },1000);
+      setTimeout(function () {
+        This.rounds('.eleventh_text',0,5,360);
+      },1800);
     },
 
+    bgEleRun:function (obj,bg) {
+      var num=1;
+      var timer=setInterval(function () {
+        num+=1;
+        if(num>=3){
+          clearInterval(timer);
+        }
+        $(obj).attr('src','./img/eleventh/'+bg+num+'.png')
+      },1000);
+    },
+
+    carEleRun:function (obj) {
+      var num=1;
+      var timer=setInterval(function () {
+        num-=0.02;
+        if(num<=0.3){
+          clearInterval(timer);
+        }
+        $(obj).css({'transform':'scale('+num+')'});
+      },100);
+    },
+
+
+
+
+    carTenRun:function (obj) {
+      var num=1;
+      var timer=setInterval(function () {
+        num-=0.05;
+        if(num<=0){
+          clearInterval(timer);
+        }
+        $(obj).css({'transform':'scale('+num+')'});
+      },100);
+    },
+    roadRun:function (obj) {
+      var num=0;
+      var timer=setInterval(function () {
+        num+=0.1;
+        if(num>=1){
+          num=0;
+        }
+        console.log(num);
+        $(obj).css({'transform':'scale('+num+')'});
+      },100);
+    },
+
+    peoMore:function () {
+      for (var i=1;i<6;i++){
+        for (var j=1;j<i+3;j++){
+          var rand=Math.ceil(Math.random()*4);
+          var le=250-i*45+j*80;
+          var to=-15*i;
+          var z=6-i;
+          var str='<div class="night_peo" style="opacity:0;position: absolute;width: 65px;z-index:'+z+';left:'+le+'px;top: '+to+'px;"><img src="./img/nigth/ren'+rand+'.png" width="100%"></div>';
+          $('.nigth_bottom').append(str);
+        }
+      }
+    },
     rounds:function (obj,sta,adds,deg) {
       var num=sta;
       var timer=setInterval(function () {
