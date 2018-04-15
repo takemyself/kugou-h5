@@ -14,52 +14,73 @@
 <div class="warp">
     <ul class="out">
         <li class="li_items">
-            <img src="./img/tenth/bg.png" width="100%" alt="">
-            <div class="tenth_road">
-                <img src="./img/tenth/road.png" width="736" alt="">
-                <div class="tenth_run tenth_run1">
-                    <img src="./img/tenth/run1.png" alt="">
+            <div class="fifth">
+                <div class="fifth_bg">
+                    <img src="./img/fifth/1.png" height="300" alt="">
                 </div>
-                <div class="tenth_run tenth_run2">
-                    <img src="./img/tenth/run2.png" alt="">
+                <div class="fifth_bg">
+                    <img src="./img/fifth/2.png" height="300" alt="">
                 </div>
-                <div class="tenth_run tenth_run3">
-                    <img src="./img/tenth/run3.png" alt="">
+                <div class="fifth_bg">
+                    <img src="./img/fifth/3.jpg" height="300" alt="">
+                    <div class="door" style="background-image: url('./img/fifth/times.png')">
+                        <div class="door_one">
+                            <img src="./img/fifth/smalldoor.jpg" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="door_two">
+                            <img src="./img/fifth/smalldoor.jpg" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="door_three">
+                            <img src="./img/fifth/smalldoor.jpg" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="door_four">
+                            <img src="./img/fifth/smalldoor.jpg" width="100%" height="100%" alt="">
+                        </div>
+                    </div>
                 </div>
-                <div class="tenth_run tenth_run4">
-                    <img src="./img/tenth/run4.png" width="120" alt="">
+                <div class="fifth_bg">
+                    <img src="./img/fifth/4.png" height="300" alt="">
                 </div>
-                <div class="tenth_run tenth_run5">
-                    <img src="./img/tenth/run5.png" width="74" alt="">
+                <div class="fifth_bg">
+                    <img src="./img/fifth/5.png" height="300" alt="">
                 </div>
-                <div class="tenth_run tenth_run6">
-                    <img src="./img/tenth/run6.png" alt="">
-                </div>
-                <div class="tenth_runcar">
-                    <img src="./img/tenth/car.png" alt="">
+                <div class="fifth_wenzi">
+                    <div class="fifit_wenzi_bg" style="background-image: url('./img/fifth/wenzi5.png')">.</div>
+                    <div class="fifit_wenzi_bg" style="background-image: url('./img/fifth/wenzi5.png')">.</div>
+                    <div class="fifit_wenzi_bg" style="background-image: url('./img/fifth/wenzi5.png')">.</div>
+                    <div class="fifit_wenzi_bg" style="background-image: url('./img/fifth/wenzi5.png')">.</div>
+                    <div class="fifth_wenzi_last">
+                        <div class="fifth_wenzi_last_bg" style="background-image: url('./img/fifth/wenzilast.png')"></div>
+                        <div class="fifth_wenzi_last_bg" style="background-image: url('./img/fifth/wenzilast.png')"></div>
+                        <div class="fifth_wenzi_last_bg" style="background-image: url('./img/fifth/wenzilast.png')"></div>
+                        <div class="fifth_wenzi_last_bg" style="background-image: url('./img/fifth/wenzilast.png')"></div>
+                    </div>
                 </div>
             </div>
-            <div class="tenth_road tenth_road_run">
-                <img src="./img/tenth/road.png" width="736" alt="">
+            <div class="fifth_zhi">
+                <div class=""><img src="./img/fifth/out.png" width="100%" alt=""></div>
+                <div class="fifth_he"><img src="./img/fifth/he1.png" width="170" alt=""></div>
+                <div class="fifth_id"><img src="./img/fifth/id.png" width="76" alt=""></div>
+                <div class="fifth_zhang"><img src="./img/fifth/zhang.png" width="47" alt=""></div>
             </div>
-        </li>
-
-        <li class="li_items" style="left: 736px">
-            <img src="./img/eleventh/bg.jpg" width="736" alt="">
-            <div class="eleventh">
-                <img class="eleventh_circle" src="./img/eleventh/circle1.png" height="414" alt="">
-                <div class="eleventh_bg">
-                    <img class="eleventh_bglu" src="./img/eleventh/lu1.png" width="900" alt="">
-                </div>
-                <div class="eleventh_bottombg">
-                    <img class="eleventh_bgtop" src="./img/eleventh/top1.png" width="900" alt="">
-                </div>
-                <div class="eleventh_car">
-                    <img src="./img/eleventh/car1.png" alt="">
-                </div>
+            <!--花-->
+            <div class="fitth_flowers fifth_flowone">
+                <img src="./img/fifth/flowers.png" width="80" alt="">
             </div>
-            <div class="eleventh_text">
-                <img src="./img/eleventh/text.png" width="100%" alt="">
+            <div class="fitth_flowers fifth_flowtwo">
+                <img src="./img/fifth/flowers.png" width="80" alt="">
+            </div>
+            <div class="fitth_flowers fifth_flowthree">
+                <img src="./img/fifth/flowers.png" width="60" alt="">
+            </div>
+            <div class="fitth_flowers fifth_flowfour">
+                <img src="./img/fifth/flowers.png" width="60" alt="">
+            </div>
+            <div class="fitth_flowers fifth_flowfive">
+                <img src="./img/fifth/flowers.png" width="40" alt="">
+            </div>
+            <div class="fitth_flowers fifth_flowsix">
+                <img src="./img/fifth/flowers.png" width="40" alt="">
             </div>
         </li>
     </ul>
@@ -70,27 +91,35 @@
     init: function () {
       var This=this;
       setTimeout(function () {
-        This.tests();
-      },200);
-    },
-    tests:function () {
-      var This=this;
-      this.alltomove('.out',0,-736,-21,20,2);
+        This.alltomove('.fifth',0,-370,-3,20,2);
+      },4900);
       setTimeout(function () {
-        This.carEleRun('.eleventh_car');
-        This.rounds('.eleventh_circle',0,1,720);
-        This.bgEleRun('.eleventh_circle','circle');
-        This.bgEleRun('.eleventh_bglu','lu');
-        This.bgEleRun('.eleventh_bgtop','top');
-      },500);
+        This.stopPeo('.people');
+        This.noneToOut('.fitth_flowers',1000);
+        This.toRound('.door_three');
+        This.toRound('.door_four');
+      },6500);
       setTimeout(function () {
-        This.alltomove('.eleventh_text',-515,210,25,20,2);
-      },1000);
+        This.numRun('.fifit_wenzi_bg',1000,1000);
+      },8000);
       setTimeout(function () {
-        This.rounds('.eleventh_text',0,5,360);
-      },1800);
-    },
+        This.numRun('.fifth_wenzi_last_bg',1000,1000);
+        This.noneToOut('.fifth_zhi',1000);
+        This.tomove('.fifth_he','25px',1000,3);
+        This.tomove('.fifth_id','90px',2000,3);
+      },10000);
+      setTimeout(function () {
+        This.tomove('.fifth_zhang','90px',500,3);
+      },12000);
+      setTimeout(function () {
+        This.tomove('.fifth_zhang','50px',500,3);
+        $('.fifth_he>img').attr('src','./img/fifth/he2.png')
+      },12800);
+      setTimeout(function () {
+        This.tomove('.fifth_zhang','125px',500,3);
+      },13500);
 
+    },
     bgEleRun:function (obj,bg) {
       var num=1;
       var timer=setInterval(function () {
@@ -112,9 +141,6 @@
         $(obj).css({'transform':'scale('+num+')'});
       },100);
     },
-
-
-
 
     carTenRun:function (obj) {
       var num=1;

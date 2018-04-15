@@ -159,6 +159,12 @@
                         <div class="fifit_wenzi_bg" style="background-image: url('./img/fifth/wenzi5.png')">.</div>
                         <div class="fifit_wenzi_bg" style="background-image: url('./img/fifth/wenzi5.png')">.</div>
                         <div class="fifit_wenzi_bg" style="background-image: url('./img/fifth/wenzi5.png')">.</div>
+                        <div class="fifth_wenzi_last">
+                            <div class="fifth_wenzi_last_bg" style="background-image: url('./img/fifth/wenzilast.png')"></div>
+                            <div class="fifth_wenzi_last_bg" style="background-image: url('./img/fifth/wenzilast.png')"></div>
+                            <div class="fifth_wenzi_last_bg" style="background-image: url('./img/fifth/wenzilast.png')"></div>
+                            <div class="fifth_wenzi_last_bg" style="background-image: url('./img/fifth/wenzilast.png')"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="fifth_zhi">
@@ -203,6 +209,12 @@
                             <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
                             <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
                             <div class="sixth_times" style="background-image: url('./img/sixth/wenzi.png')"></div>
+                            <div class="sixth_wenzi3000">
+                                <img src="./img/sixth/wenzi3000.png" width="100%" alt="">
+                            </div>
+                            <div class="sixth_wenzi3000">
+                                <img src="./img/sixth/wnzi1000.png" width="100%" alt="">
+                            </div>
                         </div>
                         <div class="sixth_bottom">
                             <img src="./img/sixth/wenzi2.png" width="410" alt="">
@@ -444,10 +456,10 @@
     <div class="car">
         <img class="car_car" src="./img/seventh/car.png" height="100" alt="">
         <div class="car_left">
-            <img src="./img/seventh/lun.png" width="100%" alt="">
+            <img class="car_lun" src="./img/seventh/lun.png" width="100%" alt="">
         </div>
         <div class="car_left car_right">
-            <img src="./img/seventh/lun.png" width="100%" alt="">
+            <img class="car_lun" src="./img/seventh/lun.png" width="100%" alt="">
         </div>
     </div>
 </body>
@@ -565,6 +577,7 @@
         This.numRun('.fifit_wenzi_bg',1000,1000);
       },7000);
       setTimeout(function () {
+        This.numRun('.fifth_wenzi_last_bg',1000,1000);
         This.noneToOut('.fifth_zhi',1000);
         This.tomove('.fifth_he','25px',1000,3);
         This.tomove('.fifth_id','90px',2000,3);
@@ -600,6 +613,7 @@
         This.tomove('.sixth_bottom','15px',1000,1);
       },9000);
       setTimeout(function () {
+        This.numRun('.sixth_wenzi3000',1000,1000);
         This.alltomove('.sixth_zhu',235,10,-3,20,3);
         This.noneToOut('.sixth_line',1000);
         This.noneToOut('.sixth_title',1000);

@@ -324,21 +324,28 @@ body{
     top: 80px;
     border: 2px solid #2d85b5;
 }
-.fifit_wenzi_bg{
+.fifit_wenzi_bg,.fifth_wenzi_last_bg{
     height: 36px;
     background-repeat: no-repeat;
     background-size: 330px 160px;
     opacity: 0;
 }
-.fifit_wenzi_bg:nth-of-type(2){
-    background-position: 0 -40px;
+.fifit_wenzi_bg:nth-of-type(2),.fifth_wenzi_last_bg:nth-of-type(2){
+    background-position: 0 -37px;
 }
-.fifit_wenzi_bg:nth-of-type(3){
+.fifit_wenzi_bg:nth-of-type(3),.fifth_wenzi_last_bg:nth-of-type(3){
     background-position: 0 -83px;
 }
-.fifit_wenzi_bg:nth-of-type(4){
+.fifit_wenzi_bg:nth-of-type(4),.fifth_wenzi_last_bg:nth-of-type(4){
     background-position: 0 -126px;
 }
+.fifth_wenzi_last{
+    width: 330px;
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
 .fifth_zhi{
     width: 200px;
     height: 205px;
@@ -444,6 +451,12 @@ body{
     left: 0;
     top: 150px;
     z-index: 200;
+}
+.sixth_wenzi3000{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
 }
 .sixth_times{
     width: 100%;
