@@ -9,24 +9,104 @@
     <style>
         *{margin: 0;padding: 0;}
         img{vertical-align: middle;}
+        li{list-style: none;}
+        a{text-decoration: none;}
+
+        /*滚动条*/
+        .modal-open {
+            position: fixed;
+            width: 100%;
+        }
         .draw{position: relative;}
-        .draw_out{width:90%;position: absolute;left: 5vw;top: 0;}
+        .draw_out{width:90%;position: absolute;left: 5vw;top: 0;z-index: 1;}
         .draw_num{width: 80%;margin: 10px auto 0;font-size:18px;line-height:50px;text-align:center;border-radius: 25px;background: white;box-shadow: 0px 5px 5px blue;}
-        .gua_out{width: 80%;margin: 0 auto 0;}
-        .warp{width:100%;height:2000px;overflow: scroll;}
+        .gua_out{width: 270px;height:140px;margin: 0 auto 0;}
         #lotteryContainer{position:relative;margin-top: 10px;}
         #drawPercent {color:#F60;}
+        .again{width: 100%;text-align: center;margin: 0 auto;color: white;}
+        .again>span{color: yellow;}
+
+        .zhezhao{width:100%;height:100%;position: fixed;left: 0;top: 0;background: rgba(0,0,0,0.5);z-index: 9;overflow: hidden;}
+        .zhe_out{width: 80%;margin: 50px auto;position: relative;}
+        .inputs{width: 100%;position: absolute;left: 0;top: 190px;padding-top: 10px;background: #F8F9FB;border-radius: 5px;}
+        .inputs>ul{overflow: hidden;}
+        .inputs li{width: 80%;margin: 5px auto;height: 50px;border: 1px solid #ccc;overflow: hidden;}
+        .zhe_items{float: left;}
+        .zhe_items:first-of-type{width:50px;height:100%;border-right: 1px solid #ccc;text-align: center;padding-top: 10px;position: relative;}
+        .zhe_items>i{display: block;width: 10px;height: 10px;border-right: 1px solid #ccc;border-top: 1px solid #ccc;position: absolute;background:#F8F9FB;right: -12px;top: 18px;transform-origin: 0px 0px;transform:rotate(45deg);}
+        .zhe_items:last-of-type{width: 74%;margin-left: 12px;}
+
+        .zhe_input{width: 100%;height:30px;display: block;margin-top: 10px;border: none;background: #f8f9fb;outline: none;font-size: 18px;float: left;}
+        .code{float: right;display: block;background: #0078C6;height:30px;line-height:30px;padding:0 10px;margin-top: 10px;color:white;}
+        .tijiao{width: 100px;height:35px;display:block;border:none;font-size:20px;color:white;margin: 10px auto;background: #0078C6;}
     </style>
     <script src="./js/jquery-1.9.1.js"></script>
 </head>
-<body style="overflow: hidden;">
+<body>
+<!--https://sh2.ipyy.com/sms.aspx?action=send&userid=dn24&account=dn24&password=dn2416&mobile=18058861376&content=您的验证码：1439【华晨】&sendTime=&extno=-->
+
+<!--<div class="zhezhao">
+    <div class="zhe_out">
+        <img src="./imgs/xinxi1.png" width="100%" alt="">
+        <div class="inputs">
+            <form action="" method="post" onsubmit="return false;">
+                <ul>
+                    <li>
+                        <div class="zhe_items"><img src="./imgs/people.png" width="30" alt=""><i></i></div>
+                        <div class="zhe_items"><input class="zhe_input" required placeholder="用户名" type="text"></div>
+                    </li>
+                    <li>
+                        <div class="zhe_items"><img src="./imgs/phone.png" width="30" alt=""><i></i></div>
+                        <div class="zhe_items"><input class="zhe_input" required placeholder="请填写有效的手机号码" type="number"></div>
+                    </li>
+                    <li>
+                        <div class="zhe_items"><img src="./imgs/wenhao.png" width="30" alt=""><i></i></div>
+                        <div class="zhe_items">
+                            <input class="zhe_input" required placeholder="验证码" style="width: 50%" type="number">
+                            <a class="code" href="">点击获取</a>
+                        </div>
+                    </li>
+                    <li style="color: #ccc;text-align: center;height: 150px;overflow: scroll;">
+                        <h4>免责声明</h4>
+                        <p style="text-align: left;text-indent: 2em;">华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车华晨汽车</p>
+                    </li>
+                    <input type="submit" class="tijiao" value="提交">
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>-->
+<div class="zhezhao">
+    <div class="zhe_out">
+        <img src="./imgs/xinxi1.png" width="100%" alt="">
+        <div class="inputs">
+            <form action="" method="post" onsubmit="return false;">
+                <ul>
+                    <li>
+                        <div class="zhe_items"><img src="./imgs/people.png" width="30" alt=""><i></i></div>
+                        <div class="zhe_items"><input class="zhe_input" required placeholder="用户名" type="text"></div>
+                    </li>
+                    <li>
+                        <div class="zhe_items"><img src="./imgs/phone.png" width="30" alt=""><i></i></div>
+                        <div class="zhe_items"><input class="zhe_input" required placeholder="请填写有效的手机号码" type="number"></div>
+                    </li>
+                    <li>
+                        <div class="zhe_items"><img src="./imgs/wenhao.png" width="30" alt=""><i></i></div>
+                        <div class="zhe_items"><input class="zhe_input" required placeholder="收件地址" type="text"></div>
+                    </li>
+                    <input type="submit" class="tijiao" value="提交">
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
 <div class="warp">
     <div class="top" style="overflow: hidden;">
         <img src="./imgs/top.png" width="100%" alt="">
     </div>
     <div class="middle" style="overflow: hidden;">
         <div class="draw" style="background-image: url('./imgs/middle.png')">
-            <img src="./imgs/mi.png" width="100%" alt="">
+            <img src="./imgs/mi.png" width="100%" height="250" alt="">
             <div class="draw_out">
                 <div class="draw_num">
                     你还有1次抽奖机会！
@@ -34,17 +114,20 @@
                 <div class="gua_out">
                     <div id="lotteryContainer"></div>
                 </div>
+                <div class="again">转发微博、微信、空间可获得一次<span>刮奖</span>机会</div>
             </div>
         </div>
     </div>
-
     <div class="bottom">
         <img src="./imgs/bottom.png" width="100%" alt="">
     </div>
-    <div style="background: gray">dd</div>
 </div>
 </body>
 <script>
+
+
+
+
   function Lottery(id, cover, coverType, width, height, drawPercentCallback) {
     this.conId = id;
     this.conNode = document.getElementById(this.conId);
@@ -104,6 +187,7 @@
       var device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
       var clickEvtName = device ? 'touchstart' : 'mousedown';
       var moveEvtName = device? 'touchmove': 'mousemove';
+      var endEvtName=device?'touchend':'mouseup';
       if (!device) {
         var isMouseDown = false;
         document.addEventListener('mouseup', function(e) {
@@ -119,7 +203,9 @@
           isMouseDown = false;
         }, false);
       }
+
       this.mask.addEventListener(clickEvtName, function (e) {
+        document.body.style.overflow='hidden';
         isMouseDown = true;
         var docEle = document.documentElement;
         if (!_this.clientRect) {
@@ -147,6 +233,10 @@
         var x = (device ? e.touches[0].clientX : e.clientX) - _this.clientRect.left + docEle.scrollLeft - docEle.clientLeft;
         var y = (device ? e.touches[0].clientY : e.clientY) - _this.clientRect.top + docEle.scrollTop - docEle.clientTop;
         _this.drawPoint(x, y);
+      }, false);
+
+      this.mask.addEventListener(endEvtName, function (e) {
+        document.body.style.overflow='';
       }, false);
     },
     drawLottery: function () {
