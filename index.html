@@ -59,20 +59,11 @@
             <!--second-->
             <li class="li_items">
                 <div class="second_bg">
-                    <div class="second_moun1">
-                        <img src="./img/second/mountain1.png" height="250" alt="">
-                    </div>
-                    <div class="second_moun2">
-                        <img src="./img/second/mountain2.png" height="250" alt="">
-                    </div>
                     <div class="second_lou">
-                        <div class="second_items"><img src="./img/second/lou1.png" alt=""></div>
+                        <div class="second_items" style="opacity: 0"><img src="./img/second/lou4.png" alt=""></div>
                         <div class="second_items"><img src="./img/second/lou2.png" alt=""></div>
                         <div class="second_items"><img src="./img/second/lou3.png" alt=""></div>
-                        <div class="second_items"><img src="./img/second/lou4.png" alt=""></div>
-                    </div>
-                    <div class="second_grass">
-                        <img src="./img/second/grass.png" height="50" alt="">
+                        <div class="second_items" style="opacity: 0"><img src="./img/second/lou4.png" alt=""></div>
                     </div>
                     <div class="second_year">
                         <span class="second_num" style="background-image:url('./img/second/2015.png')">.</span>
@@ -86,9 +77,8 @@
             <!--third-->
             <li class="li_items">
                 <div class="third_bg">
-                    <img src="./img/third/bg.jpg" height="300" alt="">
+                    <img src="./img/third/bg.png" height="200" alt="">
                 </div>
-                <div class="third_mid"><img src="./img/third/haveme.png" width="100%" alt=""></div>
                 <div class="third_wenzi"><img src="./img/third/wenzi.png" width="100%" alt=""></div>
                 <div class="third_car third_lcar">
                     <img src="./img/third/zhonghua.png" width="100%" alt="">
@@ -466,161 +456,157 @@
 <script>
   var allAni = {
     init: function () {
-      var This=this;
-      this.liToInit();
-      this.noneToOut('.first_left' ,2000);
-      setTimeout(function () {
-        This.rounds('.first_circle',0,1,720);
-        This.noneToOut('.runup' ,2000);
-      },2000);
-      setTimeout(function () {
-        This.noneToOut('.rundown' ,2000);
-      },4000);
-      setTimeout(function () {
-        This.noneToOut('.first_third',3000);
-        This.noneToOut('.first_year',5000);
-      },5000);
-      setTimeout(function () {
-        This.numRun('.first_wen',1000/60,300);
-        This.rightin();
-      },3000);
-      setTimeout(function () {
-        This.carRun('.first_car');
-      },4000);
-      setTimeout(function () {
-        This.second();
-      },8000);
-    },
+          var This=this;
+          this.liToInit();
+          this.noneToOut('.first_left' ,2000);
+          setTimeout(function () {
+              This.rounds('.first_circle',0,1,720);
+              This.noneToOut('.runup' ,2000);
+          },2000);
+          setTimeout(function () {
+              This.noneToOut('.rundown' ,2000);
+          },4000);
+          setTimeout(function () {
+              This.noneToOut('.first_third',3000);
+              This.noneToOut('.first_year',5000);
+          },5000);
+          setTimeout(function () {
+              This.numRun('.first_wen',1000/60,300);
+              This.rightin();
+          },3000);
+          setTimeout(function () {
+              This.carRun('.first_car');
+          },4000);
+          setTimeout(function () {
+              This.second();
+          },8000);
+      },
     second:function () {
-      var This=this;
-      this.alltomove('.out',0,-735,-3,20,2);
-      setTimeout(function () {
-        This.bgRun('.second_items',500,3000);
-        This.numRun('.second_num',2000,1000);
-      },3000);
-
-      this.peopleRun('.peo');
-      setTimeout(function () {
-        This.noneToOut('.peoout');
-        This.alltomove('.peoout',-100,300,3,20,2);
-      },5000);
-      setTimeout(function () {
-        This.toDeg('.second_moun1',90,1);
-        This.alltomove('.second_bg',0,-736,-3,20,2);
-      },7500);
-      setTimeout(function () {
-        This.alltomove('.second_grass',295,245,-3,20,3);
-        This.toDeg('.second_moun2',90,1);
-      },10000);
-      setTimeout(function () {
-        This.third();
-      },12400);
-    },
+          var This=this;
+          this.peopleRun('.peo');
+          this.alltomove('.out',0,-735,-5,20,2);
+          setTimeout(function () {
+              This.noneToOut('.peoout');
+              This.alltomove('.peoout',-100,300,3,20,2);
+          },1500);
+          setTimeout(function () {
+              This.numRun('.second_num',1000,500);
+          },1800);
+          setTimeout(function () {
+              This.bgRun('.second_items',500,1000);
+              This.alltomove('.second_bg',0,-291,-3,20,2);
+          },4000);
+          setTimeout(function () {
+              This.third();
+          },6000);
+      },
     third:function () {
-      var This=this;
-      this.alltomove('.out',-735,-1470,-3,20,2);
-      this.tomove('.peoout','220px',4000,3);
-      setTimeout(function () {
-        This.alltomove('.third_bg',0,-235,-3,20,2);
-      },4900);
-      setTimeout(function () {
-        This.stopPeo('.peo');
-      },6600);
-      setTimeout(function () {
-        This.noneToOut('.third_mid',2000);
-        This.jitter('.third_mid');
-        This.tomove('.third_wenzi','-25px',3000,3);
-
-      },7000);
-      setTimeout(function () {
-        This.noneToOut('.third_car',500);
-        This.thirdCarRun('.third_lcar',200);
-        This.thirdCarRun('.third_rcar',200,1);
-      },8000);
-      setTimeout(function () {
-        This.thirdCarRun('.third_ltwocar',50);
-        This.thirdCarRun('.third_rtwocar',50,1);
-      },10000);
-      setTimeout(function () {
-        This.peopleRun('.people');
-        This.fourth();
-      },12000)
-    },
+          var This=this;
+          this.alltomove('.out',-735,-1470,-3,20,2);
+          this.tomove('.peoout','220px',4000,3);
+          setTimeout(function () {
+              This.stopPeo('.peo');
+          },4500);
+          setTimeout(function () {
+              This.tomove('.third_wenzi','-25px',3000,3);
+          },6000);
+          setTimeout(function () {
+              This.noneToOut('.third_car',500);
+              This.thirdCarRun('.third_lcar',200);
+              This.thirdCarRun('.third_rcar',200,1);
+          },4000);
+          setTimeout(function () {
+              This.thirdCarRun('.third_ltwocar',50);
+              This.thirdCarRun('.third_rtwocar',50,1);
+          },5000);
+          setTimeout(function () {
+              This.peopleRun('.people');
+              This.fourth();
+          },9000)
+      },
     fourth:function () {
       var This=this;
-      this.alltomove('.out',-1470,-2207,-3,20,2);
+      this.alltomove('.out',-1470,-2207,-4,20,2);
 
       setTimeout(function () {
-        This.bgRun('.fourth_bg',800,800);
-      },4500);
+        This.bgRun('.fourth_bg',800,600);
+      },3000);
       setTimeout(function () {
-        This.alltomove('.fourth',0,-180,-3,20,2);
-      },4900);
+        This.alltomove('.fourth',0,-180,-4,20,2);
+      },3600);
       setTimeout(function () {
         This.fifth();
-      },6100);
+      },4580);
     },
     fifth:function () {
       var This=this;
       this.alltomove('.peoout',300,100,-1,20,2);
-      this.alltomove('.out',-2207,-2942,-3,20,2);
-      setTimeout(function () {
-        This.alltomove('.fifth',0,-370,-3,20,2);
-      },4900);
-      setTimeout(function () {
-        This.stopPeo('.people');
-        This.noneToOut('.fitth_flowers',1000);
-        This.toRound('.door_three');
-        This.toRound('.door_four');
-      },6500);
-      setTimeout(function () {
-        This.numRun('.fifit_wenzi_bg',1000,1000);
-      },7000);
-      setTimeout(function () {
-        This.numRun('.fifth_wenzi_last_bg',1000,1000);
-        This.noneToOut('.fifth_zhi',1000);
-        This.tomove('.fifth_he','25px',1000,3);
-        This.tomove('.fifth_id','90px',2000,3);
-      },10000);
-      setTimeout(function () {
-        This.tomove('.fifth_zhang','90px',500,3);
-      },12000);
-      setTimeout(function () {
-        This.tomove('.fifth_zhang','50px',500,3);
-        $('.fifth_he>img').attr('src','./img/fifth/he2.png')
-      },12800);
-      setTimeout(function () {
-        This.tomove('.fifth_zhang','125px',500,3);
-      },13500);
-      setTimeout(function () {
-        This.sixth();
-      },15000);
+      this.alltomove('.out',-2207,-2942,-4,20,2);
+        setTimeout(function () {
+            This.alltomove('.fifth',0,-370,-3,20,2);
+        },3700);
+        setTimeout(function () {
+            This.stopPeo('.people');
+        },6000);
+        setTimeout(function () {
+            This.toRound('.door_three');
+            This.toRound('.door_four');
+        },6500);
+
+        setTimeout(function () {
+            This.noneToOut('.fitth_flowers',1000);
+            This.noneToOut('.fitth_flowers',1000);
+            This.numRun('.fifit_wenzi_bg',1000,500);
+        },8000);
+        setTimeout(function () {
+            This.numRun('.fifth_wenzi_last_bg',1000,500);
+        },10000);
+        setTimeout(function () {
+            This.noneToOut('.fifth_zhi',1000);
+        },12000);
+        setTimeout(function () {
+            This.tomove('.fifth_he','25px',1000,3);
+            This.tomove('.fifth_id','90px',2000,3);
+        },12500);
+        setTimeout(function () {
+            This.tomove('.fifth_zhang','90px',500,3);
+        },14000);
+        setTimeout(function () {
+            This.tomove('.fifth_zhang','50px',500,3);
+            $('.fifth_he>img').attr('src','./img/fifth/he2.png')
+        },14800);
+        setTimeout(function () {
+            This.tomove('.fifth_zhang','125px',500,3);
+        },15200);
+        setTimeout(function () {
+            This.sixth();
+        },17000);
     },
     sixth:function () {
       var This=this;
       this.alltomove('.peoout',100,-100,-3,20,2);
       this.alltomove('.out',-2942,-3680,-3,20,2);
-      setTimeout(function () {
-        This.widthToShort('.sixth_zhe');
-      },4000);
-      setTimeout(function () {
-        This.alltomove('.sixth_zhezhao',736,0,-8,20,2)
-      },6000);
-      setTimeout(function () {
-        This.numRun('.sixth_times',1000,500);
-      },8000);
-      setTimeout(function () {
-        This.tomove('.sixth_bottom','15px',1000,1);
-      },9000);
-      setTimeout(function () {
-        This.numRun('.sixth_wenzi3000',1000,1000);
-        This.alltomove('.sixth_zhu',235,10,-3,20,3);
-        This.noneToOut('.sixth_line',1000);
-        This.noneToOut('.sixth_title',1000);
-      },10000);
-      setTimeout(function () {
-        This.seventh();
-      },13000);
+        setTimeout(function () {
+            This.widthToShort('.sixth_zhe');
+        },4000);
+        setTimeout(function () {
+            This.alltomove('.sixth_zhezhao',736,0,-32,20,2)
+        },6000);
+        setTimeout(function () {
+            This.numRun('.sixth_times',1000,500);
+        },7000);
+        setTimeout(function () {
+            This.tomove('.sixth_bottom','15px',1000,1);
+        },8000);
+        setTimeout(function () {
+            This.numRun('.sixth_wenzi3000',1000,1000);
+            This.alltomove('.sixth_zhu',235,10,-3,20,3);
+            This.noneToOut('.sixth_line',1000);
+            This.noneToOut('.sixth_title',1000);
+        },9000);
+        setTimeout(function () {
+            This.seventh();
+        },12000);
     },
     seventh:function () {
       var This=this;
