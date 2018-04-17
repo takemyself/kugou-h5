@@ -11,6 +11,11 @@
     <script src="./js/echarts.js"></script>
 </head>
 <body>
+<div class="dise">
+    <img src="./img/tenth/bg.png" width="100%" alt="">
+</div>
+
+
     <div class="warp">
         <ul class="out">
             <!--first-->
@@ -364,7 +369,7 @@
             </li>
 
             <!--nigth-->
-            <li class="li_items">
+            <li class="li_items nigth">
                 <div class="nigth_top">
                     <div class="nigth_items">
                         <img src="./img/nigth/1.png" width="100%" height="180" alt="">
@@ -373,7 +378,7 @@
                         <img src="./img/nigth/2.png" width="100%" height="180" alt="">
                     </div>
                     <div class="nigth_items">
-                        <img src="./img/nigth/3.png" width="100%" height="180" alt="">
+                        <img src="./img/nigth/3.png" width="140%" height="180" alt="">
                     </div>
                     <div class="nigth_items">
                         <img src="./img/nigth/4.png" width="100%" height="180" alt="">
@@ -382,9 +387,9 @@
                         <img src="./img/nigth/5.png" width="100%" height="180" alt="">
                     </div>
                     <div class="nigth_text">
-                        <div class="nigth_text_bg" style="background-image: url('./img/nigth/wenzi.png')"></div>
-                        <div class="nigth_text_bg" style="background-image: url('./img/nigth/wenzi.png')"></div>
-                        <div class="nigth_text_bg" style="background-image: url('./img/nigth/wenzi.png')"></div>
+                        <div class="nigth_text_bg nigth_text_bgs" style="background-image: url('./img/nigth/wenzi.png')"></div>
+                        <div class="nigth_text_bg" style="background-image: url('./img/nigth/wenzi.png');height: 5px;"></div>
+                        <div class="nigth_text_bg nigth_text_bgs" style="background-image: url('./img/nigth/wenzi.png')"></div>
                         <div class="nigth_textbg">
                             <img src="./img/nigth/wenzi62.png" width="100%" alt="">
                         </div>
@@ -410,8 +415,8 @@
             </li>
 
             <!--tenth-->
-            <li class="li_items">
-                <img src="./img/tenth/bg.png" width="100%" alt="">
+            <li class="li_items ten" style="background: transparent;">
+                <!--<img src="./img/tenth/bg.png" width="100%" alt="">-->
                 <div class="tenth_road">
                     <img src="./img/tenth/road.png" width="736" alt="">
                     <div class="tenth_run tenth_run1">
@@ -442,8 +447,8 @@
             </li>
 
             <!--eleventh-->
-            <li class="li_items">
-                <img src="./img/eleventh/bg.jpg" width="736" alt="">
+            <li class="li_items eleventh_all" style="background: transparent;">
+                <!--<img src="./img/eleventh/bg.jpg" width="736" alt="">-->
                 <div class="eleventh">
                     <img class="eleventh_circle" src="./img/eleventh/circle1.png" height="414" alt="">
                     <div class="eleventh_bg">
@@ -544,7 +549,7 @@
           setTimeout(function () {
               This.peopleRun('.people');
               This.fourth();
-          },9000)
+          },10000)
       },
     fourth:function () {
       var This=this;
@@ -585,6 +590,10 @@
         },10000);
         setTimeout(function () {
             This.noneToOut('.fifth_zhi',1000);
+
+            This.peopleRun('.ple');
+            This.alltomove('.peoout',100,736,3,20,2);
+
         },12000);
         setTimeout(function () {
             This.tomove('.fifth_he','25px',1000,3);
@@ -606,29 +615,30 @@
     },
     sixth:function () {
       var This=this;
-      this.alltomove('.peoout',100,-100,-3,20,2);
-      this.alltomove('.out',-2942,-3680,-3,20,2);
+        This.stopPeo('.ple');
+      $('.peoout').css({'left':'-100'});
+      this.alltomove('.out',-2942,-3680,-8,20,2);
         setTimeout(function () {
             This.widthToShort('.sixth_zhe');
-        },4000);
+        },2000);
         setTimeout(function () {
             This.alltomove('.sixth_zhezhao',736,0,-32,20,2)
-        },6000);
+        },4000);
         setTimeout(function () {
             This.numRun('.sixth_times',1000,500);
-        },7000);
+        },5000);
         setTimeout(function () {
             This.tomove('.sixth_bottom','15px',1000,1);
-        },8000);
+        },6000);
         setTimeout(function () {
             This.numRun('.sixth_wenzi3000',1000,1000);
             This.alltomove('.sixth_zhu',235,10,-3,20,3);
             This.noneToOut('.sixth_line',1000);
             This.noneToOut('.sixth_title',1000);
-        },9000);
+        },7000);
         setTimeout(function () {
             This.seventh();
-        },12000);
+        },10000);
     },
     seventh:function () {
       var This=this;
@@ -652,12 +662,12 @@
                 This.tomove('.sevevth_tower2','50',1000,3);
             },7500);
         setTimeout(function () {
+            This.tomove('.sevevth_tower3','95',1000,3);
             This.alltomove('.peoout',300,-100,-3,20,2);
         },8000);
         setTimeout(function () {
-            This.tomove('.sevevth_tower3','95',1000,3);
             This.toblock('.car');
-            This.rounds('.car_left',0,20,30000);
+            This.rounds('.car_left',0,20,22000);
             This.alltomove('.car',-270,200,3,20,2);
         },10500);
         setTimeout(function () {
@@ -668,9 +678,11 @@
             This.toDeg('.sevevth_tree',90,1);
         },12000);
         setTimeout(function () {
+            This.toBig('.sevevth_wenzi2',0.05,1);
+        },15000);
+        setTimeout(function () {
             This.eighth();
             This.noneToOut('.eighth_time',2000);
-            This.toBig('.sevevth_wenzi2',0.05,1);
         },16000);
     },
     eighth:function () {
@@ -686,11 +698,11 @@
         setTimeout(function () {
             This.noneToOut('.eighth_text2',2000);
         },7500),
-            setTimeout(function () {
-                This.toBig('.eighth_text1',0.05,1);
-                $('.car_car').attr('src','./img/eighth/car1.png');
-                $('.car_lun').attr('src','./img/eighth/lun1.png');
-            },8900);
+        setTimeout(function () {
+            This.toBig('.eighth_text1',0.05,1);
+            $('.car_car').attr('src','./img/eighth/car1.png');
+            $('.car_lun').attr('src','./img/eighth/lun1.png');
+        },8900);
         setTimeout(function () {
             This.toBig('.eighth_text3',0.05,1);
             This.alltomove('.car',-270,200,3,20,2);
@@ -716,70 +728,141 @@
       var This=this;
       this.alltomove('.out',-5152,-5888,-3,20,2);
       This.alltomove('.car',200,-270,-3,20,2);
-      this.peoMore();
-      setTimeout(function () {
-        This.numRun('.nigth_text_bg',1000,1000);
-        This.toDeg('.nigth_times',110,5);
-        This.numRun('.night_peo',1000,100);
-      },4900);
-      setTimeout(function () {
-        This.numRun('.nigth_textbg',1000,1500);
-      },6900);
-      setTimeout(function () {
-        This.tenth();
-      },9000);
+        setTimeout(function () {
+            This.peoMore();
+        },2000),
+            setTimeout(function () {
+                This.numRun('.nigth_text_bgs',1000,500);
+                This.toDeg('.nigth_times',110,5);
+                This.numRun('.night_peo',1000,100);
+            },4900);
+        setTimeout(function () {
+            This.leftRightRotate('.nigth_times');
+            This.numRun('.nigth_textbg',1000,300);
+        },5900);
+        setTimeout(function () {
+            This.tenth();
+        },9000);
     },
     tenth:function () {
-      var This=this;
-      this.alltomove('.out',-5888,-6624,-3,20,2);
-      setTimeout(function () {
-        This.alltomove('.tenth_runcar',414,280,-3,20,3);
-      },4900);
-      setTimeout(function () {
-        This.carTenRun('.tenth_runcar');
-      },7000);
-      setTimeout(function () {
-        This.roadRun('.tenth_run1');
-      },5000);
-      setTimeout(function () {
-        This.roadRun('.tenth_road_run');
-      },5000);
-      setTimeout(function () {
-        This.roadRun('.tenth_run4');
-      },5100);
-      setTimeout(function () {
-        This.roadRun('.tenth_run2');
-      },5200);
-      setTimeout(function () {
-        This.roadRun('.tenth_run5');
-      },5300);
-      setTimeout(function () {
-        This.roadRun('.tenth_run3');
-      },5400);
-      setTimeout(function () {
-        This.roadRun('.tenth_run6');
-      },5500);
-      setTimeout(function () {
-        This.eleventh();
-      },9500);
+        var This=this;
+        $('.dise').css({'display':'block'});
+        this.toRotateX('.nigth',10);
+        setTimeout(function () {
+            $('.out').css({'left':'-6624px'});
+        },900);
+        setTimeout(function () {
+            This.noneToOut('.ten',2700);
+        },900),
+
+        setTimeout(function () {
+            This.alltomove('.tenth_runcar',414,280,-3,20,3);
+        },1900);
+        setTimeout(function () {
+            This.carTenRun('.tenth_runcar');
+            This.roadRun('.tenth_run1');
+            This.roadRun('.tenth_road_run');
+        },2000);
+        setTimeout(function () {
+            This.roadRun('.tenth_run4');
+        },2100);
+        setTimeout(function () {
+            This.roadRun('.tenth_run2');
+        },2200);
+        setTimeout(function () {
+            This.roadRun('.tenth_run5');
+        },2300);
+        setTimeout(function () {
+            This.roadRun('.tenth_run3');
+        },2400);
+        setTimeout(function () {
+            This.roadRun('.tenth_run6');
+        },2500);
+        setTimeout(function () {
+            This.eleventh();
+        },4500);
     },
     eleventh:function () {
       var This=this;
-      this.alltomove('.out',-6624,-7360,-3,20,2);
-      setTimeout(function () {
-        This.carEleRun('.eleventh_car');
-        This.rounds('.eleventh_circle',0,1,720);
-        This.bgEleRun('.eleventh_circle','circle');
-        This.bgEleRun('.eleventh_bglu','lu');
-        This.bgEleRun('.eleventh_bgtop','top');
-      },4900);
-      setTimeout(function () {
-        This.alltomove('.eleventh_text',-515,210,25,20,2);
-      },5500);
-      setTimeout(function () {
-        This.rounds('.eleventh_text',0,5,360);
-      },5800);
+        $('.dise>img').attr('src','./img/eleventh/bg.png');
+        this.toRotateNext('.ten',0,90,10);
+        setTimeout(function () {
+            $('.out').css({'left':'-7360px'});
+            This.toRotateNext('.eleventh_all',90,0,-10);
+        },900);
+
+        setTimeout(function () {
+            This.carEleRun('.eleventh_car');
+            This.rounds('.eleventh_circle',0,1,720);
+            This.bgEleRun('.eleventh_circle','circle');
+            This.bgEleRun('.eleventh_bglu','lu');
+            This.bgEleRun('.eleventh_bgtop','top');
+        },2000);
+        setTimeout(function () {
+            This.alltomove('.eleventh_text',-515,210,25,20,2);
+        },3000);
+        setTimeout(function () {
+            This.rounds('.eleventh_text',0,5,360);
+        },4000);
     },
+
+      toRotateNext:function (obj,sta,end,adds) {
+          var num=sta;
+          var timer=setInterval(function () {
+              num+=adds;
+              if (sta>end){
+                  if (num<=end){
+                      clearInterval(timer);
+                  }
+              }else {
+                  if (num>=end){
+                      clearInterval(timer);
+                  }
+              }
+              $(obj).css({'transform':'rotateX('+num+'deg)'})
+          },100);
+      },
+
+      toSmall:function (obj) {
+          var num=1;
+          var timer=setInterval(function () {
+              num-=0.1;
+              if(num<=0){
+                  clearInterval(timer);
+              }
+              $(obj).css({'transform':'scale('+num+')'});
+          },100);
+      },
+
+      toRotateX:function (obj,adds) {
+          var num=0;
+          var timer=setInterval(function () {
+              num+=adds;
+              if (num>=90){
+                  clearInterval(timer);
+              }
+              $(obj).css({'transform':'rotateY('+num+'deg)'});
+          },100);
+      },
+
+      leftRightRotate:function (obj) {
+          var num=0;
+          var adds=1;
+          var times=0;
+          $(obj).css({'transformOrigin':'bottom'});
+          var timer=setInterval(function () {
+              num+=adds;
+              if(num>=10||num<-10){
+                  times++;
+                  if (times>3&&num>-5){
+                      num=0;
+                      clearInterval(timer);
+                  }
+                  adds=-adds;
+              }
+              $(obj).css({'transform':'rotate('+num+'deg)'})
+          },1000/60);
+      },
 
     bgEleRun:function (obj,bg) {
       var num=1;
@@ -842,18 +925,19 @@
         $(obj).css({'transform':'scale('+num+')'});
       },100);
     },
-    peoMore:function () {
-      for (var i=1;i<6;i++){
-        for (var j=1;j<i+3;j++){
-          var rand=Math.ceil(Math.random()*4);
-          var le=250-i*45+j*80;
-          var to=-15*i;
-          var z=6-i;
-          var str='<div class="night_peo" style="opacity:0;position: absolute;width: 65px;z-index:'+z+';left:'+le+'px;top: '+to+'px;"><img src="./img/nigth/ren'+rand+'.png" width="100%"></div>';
-          $('.nigth_bottom').append(str);
-        }
-      }
-    },
+      peoMore:function () {
+          for (var i=1;i<6;i++){
+              for (var j=1;j<i+3;j++){
+                  var rand=Math.ceil(Math.random()*4);
+                  var le=250-i*45+j*80;
+                  var to=-5*i;
+                  var z=6-i;
+                  var w=100-i*5+'%';
+                  var str='<div class="night_peo" style="opacity:0;position: absolute;width: 65px;z-index:'+z+';left:'+le+'px;top: '+to+'px;"><img src="./img/nigth/ren'+rand+'.png" width="'+w+'"></div>';
+                  $('.nigth_bottom').append(str);
+              }
+          }
+      },
 
     rounds:function (obj,sta,adds,deg) {
       var num=sta;
