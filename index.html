@@ -230,21 +230,24 @@
                     <div class="sevevth_wall">
                         <img src="./img/seventh/wall1.jpg" height="414" alt="">
                         <img src="./img/seventh/wall2.png" height="414" alt="">
+                        <div class="sevevth_door">
+                            <img src="./img/seventh/door.png" height="245" alt="">
+                        </div>
                     </div>
                     <div class="sevevth">
                         <!--2016-->
                         <div class="sevevth_year">
-                            <img src="./img/seventh/2016.png" width="180" alt="">
+                            <img src="./img/seventh/2016.png" width="140" alt="">
                         </div>
                         <!--塔-->
                         <div class="sevevth_tower1">
-                            <img src="./img/seventh/tower1.png" height="300" alt="">
+                            <img src="./img/seventh/tower1.png" height="250" alt="">
                         </div>
                         <div class="sevevth_tower2">
-                            <img src="./img/seventh/tower2.png" height="300" alt="">
+                            <img src="./img/seventh/tower2.png" height="250" alt="">
                         </div>
                         <div class="sevevth_tower3">
-                            <img src="./img/seventh/tower3.png" height="300" alt="">
+                            <img src="./img/seventh/tower3.png" height="250" alt="">
                         </div>
                         <!--房子-->
                         <div class="sevevth_house">
@@ -256,7 +259,11 @@
                         </div>
                         <!--小蛮腰-->
                         <div class="sevevth_lou">
-                            <img src="./img/seventh/lou.png" height="300" alt="">
+                            <img src="./img/seventh/lou.png" height="250" alt="">
+                        </div>
+                        <!--time-->
+                        <div class="eighth_time">
+                            <img src="./img/eighth/2017.png" height="40" alt="">
                         </div>
                         <!--草-->
                         <div class="sevevth_grass">
@@ -271,19 +278,19 @@
                         </div>
                         <!--背景-->
                         <div class="sevevth_bgout">
-                            <div class="sevevth_bg">
+                            <div class="sevevth_bg" style="opacity: 0;">
                                 <img src="./img/seventh/tree1.png" height="181" alt="">
                             </div>
-                            <div class="sevevth_bg">
+                            <div class="sevevth_bg" style="opacity: 0;">
                                 <img src="./img/seventh/tree2.png" height="181" alt="">
                             </div>
-                            <div class="sevevth_bg">
+                            <div class="sevevth_bg" style="opacity: 0;">
                                 <img src="./img/seventh/tree3.png" height="181" alt="">
                             </div>
-                            <div class="sevevth_bg">
+                            <div class="sevevth_bg" style="opacity: 0;">
                                 <img src="./img/seventh/tree4.png" height="181" alt="">
                             </div>
-                            <div class="sevevth_bg">
+                            <div class="sevevth_bg" style="opacity: 0;">
                                 <img src="./img/seventh/tree5.png" height="181" alt="">
                             </div>
                             <div class="sevevth_bg">
@@ -302,7 +309,7 @@
                 <div class="eighth">
                     <!--backgrond-->
                     <div class="eighth_bg">
-                        <img src="./img/eighth/xiaomanyao.png" height="300" alt="">
+                        <img src="./img/eighth/xiaomanyao.png" height="200" alt="">
                     </div>
                     <div class="eighth_bg">
                         <img src="./img/eighth/lou.png" height="300" alt="">
@@ -320,10 +327,7 @@
                     <div class="eighth_car3">
                         <img src="./img/eighth/luhu.png" height="50" alt="">
                     </div>
-                    <!--time-->
-                    <div class="eighth_time">
-                        <img src="./img/eighth/2017.png" height="40" alt="">
-                    </div>
+
                     <!--text-->
                     <div class="eighth_text1">
                         <img src="./img/eighth/wenzi1.png" width="200" alt="">
@@ -334,9 +338,27 @@
                     <div class="eighth_text3">
                         <img src="./img/eighth/wenzi3.png" width="200" alt="">
                     </div>
+                    <!--yanhua-->
+                    <div class="eighth_yanhua">
+                        <div><img src="./img/eighth/yanhua.png" alt=""></div>
+                        <div><img src="./img/eighth/yanhua.png" alt=""></div>
+                        <div><img src="./img/eighth/yanhua.png" alt=""></div>
+                        <div><img src="./img/eighth/yanhua.png" alt=""></div>
+                        <div><img src="./img/eighth/yanhua.png" alt=""></div>
+                        <div><img src="./img/eighth/yanhua.png" alt=""></div>
+                        <div><img src="./img/eighth/yanhua.png" alt=""></div>
+                        <div><img src="./img/eighth/yanhua.png" alt=""></div>
+                        <div><img src="./img/eighth/yanhua.png" alt=""></div>
+                        <div><img src="./img/eighth/yanhua.png" alt=""></div>
+                    </div>
                     <div class="eighth_text4">
                         <img src="./img/eighth/text4.png" width="300" alt="">
-                        <!--<div class="suipian"></div>-->
+                        <div class="eighth_renke1">
+                            <img src="./img/eighth/renke.png" width="300" alt="">
+                        </div>
+                        <div class="eighth_renke2">
+                            <img src="./img/eighth/gaoduan.png" width="300" alt="">
+                        </div>
                     </div>
                 </div>
             </li>
@@ -484,10 +506,10 @@
     second:function () {
           var This=this;
           this.peopleRun('.peo');
-          this.alltomove('.out',0,-735,-5,20,2);
+          this.alltomove('.out',0,-735,-3,20,2);
           setTimeout(function () {
               This.noneToOut('.peoout');
-              This.alltomove('.peoout',-100,300,3,20,2);
+              This.alltomove('.peoout',-100,300,2,20,2);
           },1500);
           setTimeout(function () {
               This.numRun('.second_num',1000,500);
@@ -495,7 +517,7 @@
           setTimeout(function () {
               This.bgRun('.second_items',500,1000);
               This.alltomove('.second_bg',0,-291,-3,20,2);
-          },4000);
+          },5000);
           setTimeout(function () {
               This.third();
           },6000);
@@ -529,7 +551,7 @@
       this.alltomove('.out',-1470,-2207,-4,20,2);
 
       setTimeout(function () {
-        This.bgRun('.fourth_bg',800,600);
+        This.bgRun('.fourth_bg',1000,600);
       },3000);
       setTimeout(function () {
         This.alltomove('.fourth',0,-180,-4,20,2);
@@ -613,68 +635,82 @@
       this.tomove('.out','-600%',4000,2);
       $('.peoout').css({'top':'150px'});
       This.peopleRun('.person');
-      setTimeout(function () {
-        This.alltomove('.peoout',-100,300,3,20,2);
-        This.noneToOut('.sevevth_year',2000);
-        This.tomove('.sevevth_tower1','30',1000,3);
-      },4000);
-      setTimeout(function () {
-        This.bgRun('.sevevth_bg',1000,1000);
-        This.tomove('.sevevth_tower2','0',1000,3);
-      },5000);
-      setTimeout(function () {
-        This.tomove('.sevevth_tower3','45',1000,3);
-        This.alltomove('.sevevth_out',0,-1402,-3,20,2);
-      },6700);
-      setTimeout(function () {
-        This.alltomove('.peoout',300,-100,-3,20,2);
-      },8000);
-      setTimeout(function () {
-        This.toblock('.car');
-        This.rounds('.car_left',0,20,50000);
-        This.alltomove('.car',-270,200,3,20,2);
-      },10500);
-      setTimeout(function () {
-        This.toDeg('.sevevth_house',90,1);
-      },11000);
-      setTimeout(function () {
-        This.stopPeo('.person');
-        This.toDeg('.sevevth_tree',90,1);
-      },12000);
-      setTimeout(function () {
-        This.eighth();
-      },16000);
+        setTimeout(function () {
+            This.toYDeg('.sevevth_door',90,1);
+            This.alltomove('.peoout',-100,300,3,20,2);
+        },4000);
+        setTimeout(function () {
+            This.bgRun('.sevevth_bg',1000,1000);
+            This.noneToOut('.sevevth_year',2000);
+            This.toBig('.sevevth_wenzi1',0.05,1.2);
+            This.alltomove('.sevevth_out',0,-1402,-3,20,2);
+        },6700);
+        setTimeout(function () {
+            This.tomove('.sevevth_tower1','80',1000,3);
+        },7000),
+            setTimeout(function () {
+                This.tomove('.sevevth_tower2','50',1000,3);
+            },7500);
+        setTimeout(function () {
+            This.alltomove('.peoout',300,-100,-3,20,2);
+        },8000);
+        setTimeout(function () {
+            This.tomove('.sevevth_tower3','95',1000,3);
+            This.toblock('.car');
+            This.rounds('.car_left',0,20,30000);
+            This.alltomove('.car',-270,200,3,20,2);
+        },10500);
+        setTimeout(function () {
+            This.toDeg('.sevevth_house',90,1);
+        },11000);
+        setTimeout(function () {
+            This.stopPeo('.person');
+            This.toDeg('.sevevth_tree',90,1);
+        },12000);
+        setTimeout(function () {
+            This.eighth();
+            This.noneToOut('.eighth_time',2000);
+            This.toBig('.sevevth_wenzi2',0.05,1);
+        },16000);
     },
     eighth:function () {
       var This=this;
       this.alltomove('.out',-4416,-5152,-3,20,2);
-      setTimeout(function () {
-        This.alltomove('.eighth',0,-2944,-3,20,2);
-      },4900);
-      setTimeout(function () {
-        This.alltomove('.car',200,-270,-3,20,2);
-      },5900);
-      setTimeout(function () {
-        $('.car_car').attr('src','./img/eighth/car1.png');
-        $('.car_lun').attr('src','./img/eighth/lun1.png');
-      },8900);
-      setTimeout(function () {
-        This.alltomove('.car',-270,200,3,20,2);
-      },9400);
+        setTimeout(function () {
+            This.alltomove('.eighth',0,-552,-3,20,2);
+        },4900);
+        setTimeout(function () {
+            This.alltomove('.car',200,-270,-3,20,2);
+        },5900);
 
-      setTimeout(function () {
-        This.alltomove('.car',200,-270,-3,20,2);
-      },12900);
-      setTimeout(function () {
-        $('.car_car').attr('src','./img/eighth/car2.png');
-        $('.car_lun').attr('src','./img/eighth/lun2.png');
-      },15900);
-      setTimeout(function () {
-        This.alltomove('.car',-270,200,4,20,2);
-      },16400);
-      setTimeout(function () {
-        This.ninth();
-      },19500);
+        setTimeout(function () {
+            This.noneToOut('.eighth_text2',2000);
+        },7500),
+            setTimeout(function () {
+                This.toBig('.eighth_text1',0.05,1);
+                $('.car_car').attr('src','./img/eighth/car1.png');
+                $('.car_lun').attr('src','./img/eighth/lun1.png');
+            },8900);
+        setTimeout(function () {
+            This.toBig('.eighth_text3',0.05,1);
+            This.alltomove('.car',-270,200,3,20,2);
+        },9400);
+
+        setTimeout(function () {
+            This.alltomove('.eighth_yanhua',-6100,610,5,20,3);
+        },12900);
+        setTimeout(function () {
+            $('.car_left').css({'tranform':'rotate(0)'});
+            This.rounds('.car_left',0,20,22100);
+            This.alltomove('.eighth',-552,-1288,-3,20,2);
+        },18000);
+        setTimeout(function () {
+        },21000);
+        setTimeout(function () {
+            This.noneToOut('.eighth_renke1',1000);
+            This.noneToOut('.eighth_renke2',2000);
+            This.ninth();
+        },23000);
     },
     ninth:function () {
       var This=this;
@@ -755,7 +791,26 @@
         $(obj).attr('src','./img/eleventh/'+bg+num+'.png')
       },1000);
     },
-
+      toBig:function (obj,adds,end) {
+          var num=0;
+          var timer=setInterval(function () {
+              num+=adds;
+              if (num>=end){
+                  clearInterval(timer);
+              }
+              $(obj).css({'transform':'scale('+num+')'});
+          },100);
+      },
+      toYDeg:function (obj,sta,adds) {
+          var num=sta;
+          var timer=setInterval(function () {
+              num-=adds;
+              if (num<=0){
+                  clearInterval(timer);
+              }
+              $(obj).css({'transform':'rotateY('+num+'deg)'})
+          },1000/60)
+      },
     carEleRun:function (obj) {
       var num=1;
       var timer=setInterval(function () {

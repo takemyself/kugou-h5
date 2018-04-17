@@ -520,6 +520,13 @@ body{
     font-size: 0;
     float: left;
 }
+.sevevth_door{
+    position: absolute;
+    left: 100px;
+    top: 105px;
+    transform-origin: left;
+    transform: rotateY(90deg);
+}
 .sevevth_bgout{
     float: left;
     margin-top: 119px;
@@ -574,15 +581,17 @@ body{
 }
 .sevevth_lou{
     left: 1320px;
-    top: 0;
+    top: 50px;
 }
 .sevevth_wenzi1{
     left: 450px;
     top: 10px;
+    transform: scale(0);
 }
 .sevevth_wenzi2{
-    left: 1255px;
+    left: 1550px;
     top: 10px;
+    transform: scale(0);
 }
 .sevevth_year{
     left: 0;
@@ -600,6 +609,9 @@ body{
 }
 .eighth_bg{
     float: left;
+}
+.eighth_bg:first-of-type{
+    margin-top: 100px;
 }
 .eighth_bg:nth-of-type(3){
     margin-top: 200px;
@@ -621,32 +633,46 @@ body{
 }
 .eighth_time{
     position: absolute;
-    left: 135px;
-    top: 155px;
+    right: 80px;
+    top: 230px;
+
+    opacity: 0;
 }
 .eighth_text1{
     position: absolute;
-    background: white;
-    left: 1318px;
+    left: 555px;
     top: 120px;
+    transform: scale(0);
 }
 .eighth_text2{
     position: absolute;
     background: white;
-    left: 1620px;
+    left: 815px;
     top: 50px;
+    opacity: 0;
 }
 .eighth_text3{
     position: absolute;
-    background: white;
-    left: 1925px;
+    left: 1085px;
     top: 120px;
+    transform: scale(0);
 }
 .eighth_text4{
     position: absolute;
     background: white;
-    left: 2350px;
+    left: 1550px;
     top: 50px;
+}
+.eighth_renke1,.eighth_renke2{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+.eighth_yanhua{
+    position: absolute;
+    top: 610px;
+    left: 552px;
 }
 .suipian{
     position: absolute;
