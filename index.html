@@ -242,8 +242,12 @@
                     <div class="sevevth">
                         <!--2016-->
                         <div class="sevevth_year">
-                            <img src="./img/seventh/2016.png" width="140" alt="">
+                            <span class="seventh_times" style="background-image: url('./img/seventh/2016.png')"></span>
+                            <span class="seventh_times" style="background-image: url('./img/seventh/2016.png')"></span>
+                            <span class="seventh_times" style="background-image: url('./img/seventh/2016.png')"></span>
+                            <span class="seventh_times" style="background-image: url('./img/seventh/2016.png')"></span>
                         </div>
+
                         <!--塔-->
                         <div class="sevevth_tower1">
                             <img src="./img/seventh/tower1.png" height="250" alt="">
@@ -662,7 +666,7 @@
         },4000);
         setTimeout(function () {
             This.bgRun('.sevevth_bg',1000,1000);
-            This.noneToOut('.sevevth_year',2000);
+            This.numRun('.seventh_times',100,200);
             This.toBig('.sevevth_wenzi1',0.05,1.2);
             This.alltomove('.sevevth_out',0,-1402,-3,20,2);
         },6700);

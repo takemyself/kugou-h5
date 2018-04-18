@@ -545,7 +545,7 @@ body{
     margin-top: 150px;
     float: left;
 }
-.sevevth_tower1,.sevevth_tower2,.sevevth_tower3,.sevevth_house,.sevevth_tree,.sevevth_lou,.sevevth_wenzi1,.sevevth_wenzi2,.sevevth_year{
+.sevevth_tower1,.sevevth_tower2,.sevevth_tower3,.sevevth_house,.sevevth_tree,.sevevth_lou,.sevevth_wenzi1,.sevevth_wenzi2{
     position: absolute;
     left: 240px;
     top: 30px;
@@ -594,9 +594,33 @@ body{
     transform: scale(0);
 }
 .sevevth_year{
+    width: 156px;
+    height: 80px;
+    position: absolute;
     left: 0;
     top: 200px;
+}
+.sevevth_year>span{
+    display: inline-block;
+    width: 35px;
+    height: 65px;
+    overflow: hidden;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: 150px 35px;
     opacity: 0;
+}
+.sevevth_year>span:first-of-type{
+    background-position:-5px 0;
+}
+.sevevth_year>span:nth-of-type(2){
+    background-position:-40px 0;
+}
+.sevevth_year>span:nth-of-type(3){
+    background-position:-75px 0;
+}
+.sevevth_year>span:nth-of-type(4){
+    background-position:-110px 0;
 }
 
 .eighth{
@@ -675,6 +699,8 @@ body{
 }
 .eighth_text1{
     position: absolute;
+    border: 2px solid #5990b8;
+    background: rgba(194,229,241,0.9);
     left: 555px;
     top: 120px;
     transform: scale(0);
@@ -688,6 +714,8 @@ body{
 }
 .eighth_text3{
     position: absolute;
+    border: 2px solid #5990b8;
+    background: rgba(194,229,241,0.9);
     left: 1085px;
     top: 120px;
     transform: scale(0);
@@ -739,8 +767,8 @@ body{
     position: absolute;
     width: 150px;
     height: 120px;
-    left: 320px;
-    top: 20px;
+    left: 330px;
+    top: 23px;
 }
 .nigth_text_bg{
     width: 100%;
@@ -750,13 +778,13 @@ body{
     opacity: 0;
 }
 .nigth_text_bg:first-of-type{
-    background-position: 0 -13px;
+    background-position: 0 -3px;
 }
 .nigth_text_bg:nth-of-type(2){
     background-position: 0 -36px;
 }
 .nigth_text_bg:nth-of-type(3){
-    background-position: 0 -60px;
+    background-position: 0 -75px;
 }
 .nigth_ple{
     position: absolute;
@@ -781,11 +809,11 @@ body{
 .nigth_textbg{
     position: absolute;
     left: 0;
-    top: -2px;
+    top: 6px;
     opacity: 0;
 }
 .nigth_textbg:last-of-type{
-    top: -9px;
+    top: 0px;
 }
 .nigth_zhezhao{
     width: 100%;

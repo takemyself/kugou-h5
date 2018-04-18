@@ -5,13 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>华晨金融3周年</title>
     <style>
         *{margin: 0;padding: 0;}
         img{vertical-align: middle;}
         li{list-style: none;}
         a{text-decoration: none;}
-
         /*滚动条*/
         .modal-open {
             position: fixed;
@@ -44,7 +43,6 @@
 </head>
 <body>
 <!--https://sh2.ipyy.com/sms.aspx?action=send&userid=dn24&account=dn24&password=dn2416&mobile=18058861376&content=您的验证码：1439【华晨】&sendTime=&extno=-->
-
 <!--<div class="zhezhao">
     <div class="zhe_out">
         <img src="./imgs/xinxi1.png" width="100%" alt="">
@@ -76,30 +74,30 @@
         </div>
     </div>
 </div>-->
-<div class="zhezhao">
-    <div class="zhe_out">
-        <img src="./imgs/xinxi1.png" width="100%" alt="">
-        <div class="inputs">
-            <form action="" method="post" onsubmit="return false;">
-                <ul>
-                    <li>
-                        <div class="zhe_items"><img src="./imgs/people.png" width="30" alt=""><i></i></div>
-                        <div class="zhe_items"><input class="zhe_input" required placeholder="用户名" type="text"></div>
-                    </li>
-                    <li>
-                        <div class="zhe_items"><img src="./imgs/phone.png" width="30" alt=""><i></i></div>
-                        <div class="zhe_items"><input class="zhe_input" required placeholder="请填写有效的手机号码" type="number"></div>
-                    </li>
-                    <li>
-                        <div class="zhe_items"><img src="./imgs/wenhao.png" width="30" alt=""><i></i></div>
-                        <div class="zhe_items"><input class="zhe_input" required placeholder="收件地址" type="text"></div>
-                    </li>
-                    <input type="submit" class="tijiao" value="提交">
-                </ul>
-            </form>
-        </div>
-    </div>
-</div>
+<!--<div class="zhezhao">-->
+    <!--<div class="zhe_out">-->
+        <!--<img src="./imgs/xinxi1.png" width="100%" alt="">-->
+        <!--<div class="inputs">-->
+            <!--<form action="" method="post" onsubmit="return false;">-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--<div class="zhe_items"><img src="./imgs/people.png" width="30" alt=""><i></i></div>-->
+                        <!--<div class="zhe_items"><input class="zhe_input" required placeholder="用户名" type="text"></div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="zhe_items"><img src="./imgs/phone.png" width="30" alt=""><i></i></div>-->
+                        <!--<div class="zhe_items"><input class="zhe_input" required placeholder="请填写有效的手机号码" type="number"></div>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="zhe_items"><img src="./imgs/wenhao.png" width="30" alt=""><i></i></div>-->
+                        <!--<div class="zhe_items"><input class="zhe_input" required placeholder="收件地址" type="text"></div>-->
+                    <!--</li>-->
+                    <!--<input type="submit" class="tijiao" value="提交">-->
+                <!--</ul>-->
+            <!--</form>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
 <div class="warp">
     <div class="top" style="overflow: hidden;">
@@ -120,14 +118,14 @@
         </div>
     </div>
     <div class="bottom">
-        <img src="./imgs/bottom.png" width="100%" alt="">
+        <img src="./imgs/bottom.jpg" width="100%" alt="">
+    </div>
+    <div class="bottom">
+        <img src="./imgs/bottom2.jpg" width="100%" alt="">
     </div>
 </div>
 </body>
 <script>
-
-
-
 
   function Lottery(id, cover, coverType, width, height, drawPercentCallback) {
     this.conId = id;
@@ -158,6 +156,7 @@
       var imgData = ctx.getImageData(0, 0, width, height),
         pixles = imgData.data,
         transPixs = [];
+
       for (var i = 0, j = pixles.length; i < j; i += 4) {
         var a = pixles[i + 3];
         if (a < 128) {
@@ -292,6 +291,10 @@
       if (this.coverType == 'color') {
         this.maskCtx.fillStyle = this.cover;
         this.maskCtx.fillRect(0, 0, this.width, this.height);
+
+        this.maskCtx.font = "50px Courier New";
+        this.maskCtx.fillStyle = "#bebcbd";
+        this.maskCtx.fillText("刮奖区", 65, 78);
         this.maskCtx.globalCompositeOperation = 'destination-out';
       } else if (this.coverType == 'image'){
         var image = new Image(),
@@ -311,22 +314,21 @@
   }
 
   window.onload = function () {
-    var lottery = new Lottery('lotteryContainer', '#CCC', 'color', 300, 100, drawPercent);
 
+    var lottery = new Lottery('lotteryContainer', '#CCC', 'color', 300, 100, drawPercent);
     //中奖图片
-    lottery.init('http://www.baidu.com/img/bdlogo.gif', 'image');
+    lottery.init('./imgs/one.png', 'image');
 
 //    document.getElementById('freshBtn').onclick = function() {
 //      drawPercentNode.innerHTML = '0%';
 //      lottery.init(getRandomStr(10), 'text');
 //    }
-
 //    var drawPercentNode = document.getElementById('drawPercent');
     var sta=0;
     function drawPercent(percent) {
 //      drawPercentNode.innerHTML = percent + '%';
       //判断中奖等级
-      if (percent>=80&&sta==0){
+      if (percent>=50&&sta==0){
         sta=1;
         alert(1);
       }
@@ -340,5 +342,12 @@
       text += possible.charAt(Math.floor(Math.random() * possible.length));
     return text;
   }
+
+  //设置字体样式
+//  ctx.font = "30px Courier New";
+  //设置字体填充颜色
+//  ctx.fillStyle = "blue";
+  //从坐标点(50,50)开始绘制文字
+//  ctx.fillText("CodePlayer+中文测试", 50, 50);
 </script>
 </html>
