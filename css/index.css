@@ -631,6 +631,16 @@ body{
     left: 735px;
     top: 305px;
 }
+.eighth_car4{
+    position: absolute;
+    left: 1035px;
+    top: 305px;
+}
+.eighth_car5{
+    position: absolute;
+    left: 1135px;
+    top: 305px;
+}
 .eighth_time{
     position: absolute;
     right: 80px;
@@ -662,6 +672,7 @@ body{
     background: white;
     left: 1550px;
     top: 50px;
+    opacity: 0;
 }
 .eighth_renke1,.eighth_renke2{
     position: absolute;
@@ -735,6 +746,7 @@ body{
     top: 20px;
     transform-origin: left bottom;
     transform: rotate(110deg);
+    z-index: 99;
 }
 .nigth_year{
     position: absolute;
@@ -750,9 +762,18 @@ body{
 .nigth_textbg:last-of-type{
     top: -9px;
 }
-.nigth{
-    border-left: 1px solid #99CBE4;
+.nigth_zhezhao{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: white;
+    z-index: 20;
 }
+/*.nigth{*/
+    /*border-left: 1px solid #99CBE4;*/
+/*}*/
 
 .tenth_road{
     position: absolute;

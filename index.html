@@ -332,6 +332,12 @@
                     <div class="eighth_car3">
                         <img src="./img/eighth/luhu.png" height="50" alt="">
                     </div>
+                    <div class="eighth_car4">
+                        <img src="./img/eighth/tesila.png" height="50" alt="">
+                    </div>
+                    <div class="eighth_car5">
+                        <img src="./img/eighth/jiebao.png" height="50" alt="">
+                    </div>
 
                     <!--text-->
                     <div class="eighth_text1">
@@ -370,6 +376,7 @@
 
             <!--nigth-->
             <li class="li_items nigth">
+                <div class="nigth_zhezhao"></div>
                 <div class="nigth_top">
                     <div class="nigth_items">
                         <img src="./img/nigth/1.png" width="100%" height="180" alt="">
@@ -617,7 +624,8 @@
       var This=this;
         This.stopPeo('.ple');
       $('.peoout').css({'left':'-100'});
-      this.alltomove('.out',-2942,-3680,-8,20,2);
+
+      this.alltomove('.out',-2942,-3680,-16,20,2);
         setTimeout(function () {
             This.widthToShort('.sixth_zhe');
         },2000);
@@ -697,52 +705,61 @@
 
         setTimeout(function () {
             This.noneToOut('.eighth_text2',2000);
-        },7500),
+        },6500),
         setTimeout(function () {
             This.toBig('.eighth_text1',0.05,1);
             $('.car_car').attr('src','./img/eighth/car1.png');
             $('.car_lun').attr('src','./img/eighth/lun1.png');
-        },8900);
+        },7900);
         setTimeout(function () {
             This.toBig('.eighth_text3',0.05,1);
             This.alltomove('.car',-270,200,3,20,2);
-        },9400);
+        },8400);
 
         setTimeout(function () {
             This.alltomove('.eighth_yanhua',-6100,610,5,20,3);
-        },12900);
+        },11900);
         setTimeout(function () {
             $('.car_left').css({'tranform':'rotate(0)'});
             This.rounds('.car_left',0,20,22100);
             This.alltomove('.eighth',-552,-1288,-3,20,2);
-        },18000);
+        },17000);
         setTimeout(function () {
-        },21000);
+            This.noneToOut('.eighth_text4',1000);
+        },20000);
         setTimeout(function () {
             This.noneToOut('.eighth_renke1',1000);
             This.noneToOut('.eighth_renke2',2000);
             This.ninth();
-        },23000);
+        },22000);
     },
     ninth:function () {
       var This=this;
-      this.alltomove('.out',-5152,-5888,-3,20,2);
-      This.alltomove('.car',200,-270,-3,20,2);
+      this.alltomove('.out',-5152,-5888,-5,20,2);
         setTimeout(function () {
-            This.peoMore();
-        },2000),
-            setTimeout(function () {
-                This.numRun('.nigth_text_bgs',1000,500);
-                This.toDeg('.nigth_times',110,5);
-                This.numRun('.night_peo',1000,100);
-            },4900);
+            $('.car').css('opacity',0);
+            This.toDeg('.nigth_times',110,5);
+        },2940);
         setTimeout(function () {
             This.leftRightRotate('.nigth_times');
+            This.blockToNone('.nigth_zhezhao',300);
+        },3540);
+
+        setTimeout(function () {
+            This.peoMore();
+        },4000),
+
+            setTimeout(function () {
+                This.numRun('.nigth_text_bgs',1000,500);
+
+                This.numRun('.night_peo',1000,100);
+            },6000);
+        setTimeout(function () {
             This.numRun('.nigth_textbg',1000,300);
-        },5900);
+        },7000);
         setTimeout(function () {
             This.tenth();
-        },9000);
+        },10000);
     },
     tenth:function () {
         var This=this;
@@ -805,6 +822,10 @@
             This.rounds('.eleventh_text',0,5,360);
         },4000);
     },
+
+      blockToNone: function (noneToOut, times) {
+          $(noneToOut).animate({'opacity': '0'}, times);
+      },
 
       toRotateNext:function (obj,sta,end,adds) {
           var num=sta;
