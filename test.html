@@ -55,7 +55,10 @@
                     </div>
                     <!--time-->
                     <div class="eighth_time">
-                        <img src="./img/eighth/2017.png" height="40" alt="">
+                        <span class="eighth_year" style="background-image: url('./img/eighth/2017.png')"></span>
+                        <span class="eighth_year" style="background-image: url('./img/eighth/2017.png')"></span>
+                        <span class="eighth_year" style="background-image: url('./img/eighth/2017.png')"></span>
+                        <span class="eighth_year" style="background-image: url('./img/eighth/2017.png')"></span>
                     </div>
                     <!--草-->
                     <div class="sevevth_grass">
@@ -275,7 +278,7 @@
           },15000);
           setTimeout(function () {
               This.eighth();
-              This.noneToOut('.eighth_time',2000);
+              This.numRun('.eighth_year',1000,500);
           },16000);
       },
       eighth:function () {

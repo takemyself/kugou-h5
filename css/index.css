@@ -585,7 +585,7 @@ body{
 }
 .sevevth_wenzi1{
     left: 450px;
-    top: 10px;
+    top: 30px;
     transform: scale(0);
 }
 .sevevth_wenzi2{
@@ -642,11 +642,36 @@ body{
     top: 305px;
 }
 .eighth_time{
+    width: 156px;
+    height: 80px;
+    overflow: hidden;
     position: absolute;
     right: 80px;
     top: 230px;
-
+    z-index: 99;
+    /*opacity: 0;*/
+}
+.eighth_time>span{
+    display: inline-block;
+    width: 35px;
+    height: 65px;
+    overflow: hidden;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: 150px 35px;
     opacity: 0;
+}
+.eighth_time>span:first-of-type{
+    background-position:-5px 0;
+}
+.eighth_time>span:nth-of-type(2){
+    background-position:-40px 0;
+}
+.eighth_time>span:nth-of-type(3){
+    background-position:-75px 0;
+}
+.eighth_time>span:nth-of-type(4){
+    background-position:-110px 0;
 }
 .eighth_text1{
     position: absolute;
